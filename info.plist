@@ -1,0 +1,1326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>de.bru6.devonthink</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>05E7224D-461F-4FD6-BBCC-B927ADEF0E9D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E670F8C6-38F9-463A-8053-55D4C6634FCD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>3FB7D56C-1BB4-4D7A-9729-466CCEA1CDC1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7061F819-A8CD-48F5-8F37-D2246D4D7C34</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>45F9755A-A2CF-4A08-BD58-F164B38BEE00</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open record in DEVONthink</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A7A99021-056A-4D32-BE8B-AC8E3069D486</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>0944EDAA-6AAB-4723-9064-E0D0D61B98FA</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>21BA232A-1DF1-4734-82D7-3D1E23865AC3</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>704EC450-15D2-4744-8622-B248FCA997DE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0BAB7E3F-3E9B-450B-89AC-1A61A59CB08D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2D82DAFE-E22A-4B84-8CCC-C0F173EB64D8</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>70C53587-0B6B-4A52-9A1A-F6BBEAF3DD18</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D73E8268-4276-4AAD-9CF3-91B29E6B79C9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E7C45E80-CB9C-4915-ABA9-0C220A5E1773</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>List all Tags</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D883A945-0841-4E01-B919-C57B23109B59</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>45F9755A-A2CF-4A08-BD58-F164B38BEE00</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D883A945-0841-4E01-B919-C57B23109B59</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DB152084-DE5D-4ED3-8F90-EF5B355D6CEA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A7A99021-056A-4D32-BE8B-AC8E3069D486</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>0944EDAA-6AAB-4723-9064-E0D0D61B98FA</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>21BA232A-1DF1-4734-82D7-3D1E23865AC3</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E7C45E80-CB9C-4915-ABA9-0C220A5E1773</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F480BB2C-D5E5-4EDA-B3B4-69D176D25B8E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F480BB2C-D5E5-4EDA-B3B4-69D176D25B8E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0BAB7E3F-3E9B-450B-89AC-1A61A59CB08D</string>
+				<key>modifiers</key>
+				<integer>1572864</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A7A99021-056A-4D32-BE8B-AC8E3069D486</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>0944EDAA-6AAB-4723-9064-E0D0D61B98FA</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>21BA232A-1DF1-4734-82D7-3D1E23865AC3</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Christian Kirsch</string>
+	<key>description</key>
+	<string>Search DT with JavaScript only</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>DT Search JS</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>ObjC.import('stdlib');
+
+function run(argv) {
+  const dbUUID = $.getenv('selectedDbUUID');
+  const app = Application("DEVONthink 3");
+  const db = app.getDatabaseWithUuid(dbUUID);
+  const tags = db.tagGroups.name();
+  const items = tags.sort().map(t =&gt; {
+    return {title: t, subtitle: 'Press enter to list all files with this tag',
+            variables: {selectedTag: t, selectedDbUUID: dbUUID}}
+    });
+  return items &amp;&amp; items.length &gt; 0 ? 
+     JSON.stringify({'items': items}) :
+     JSON.stringify({"items": [{title: "No Tags"}]});
+}
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>getTagsList.py</string>
+				<key>subtext</key>
+				<string>{var:selectedDbName}</string>
+				<key>title</key>
+				<string>List all Tags</string>
+				<key>type</key>
+				<integer>7</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E7C45E80-CB9C-4915-ABA9-0C220A5E1773</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>ObjC.import('stdlib');
+
+function run(argv) {
+   const dbUUID = $.getenv('selectedDbUUID');
+   const tag = $.getenv('selectedTag');
+   const app = Application("DEVONthink 3");
+   const db = app.getDatabaseWithUuid(dbUUID);
+   const records = app.search(`tags: ${tag}`, {in: db});
+   const items = [];
+   records.forEach(r =&gt; {
+     const uuid = r.uuid();
+     const path = r.path();
+     const loc =  r.location().replace(/\/$/," &gt; ");
+     items.push({type: 'file',
+                 title: r.name(),
+				subtitle: `📂 ${r.database.name()} ${loc}`,
+				arg: path,
+				icon: {type: "fileicon", path: path},
+                 mods: {
+                  cmd: {valid: true, arg: uuid, subtitle: `🏷  ${r.tags().join(', ')}`},
+                  alt: {valid: true, arg: uuid, subtitle: "Reveal in DEVONthink"},
+                  shift: {valid: true, arg: `[${r.name()}](x-devonthink-item://${uuid})`,
+                         subtitle: "Copy Markdown Link"}
+                },
+                text: {
+                  copy: `x-devonthink-item://${uuid}`,
+                  largetype: `x-devonthink-item://${uuid}`
+                },
+			   quicklookurl: path 
+      }); /* items.push */
+   })
+   return items.length &gt; 0 ? 
+     JSON.stringify({items: items}) : 
+     JSON.stringify({items: [{title: "No record with these tags"}]});
+}
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>{var:selectedDbName}</string>
+				<key>title</key>
+				<string>List all Records with the Tags</string>
+				<key>type</key>
+				<integer>7</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F480BB2C-D5E5-4EDA-B3B4-69D176D25B8E</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run(argv) {
+  var query = argv[0].replace(/(\p{sc=Han}+)/ug," ~\1 ");
+  var app = Application.currentApplication();
+  app.includeStandardAdditions = true;
+  app.doShellScript(`open 'x-devonthink://search?query=${encodeURIComponent(query)}'`);
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0BAB7E3F-3E9B-450B-89AC-1A61A59CB08D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>dtsg</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>'use strict';
+ObjC.import('stdlib');
+
+function run(argv) {
+    // read environment variables
+    console.log('ok')
+    let env = $.NSProcessInfo.processInfo.environment;
+    env = env.js;
+    const selectedDB = 'selectedDbUuid' in env ? $.getenv('selectedDbUuid') : undefined;
+    console.log(selectedDB)
+    const filterOutGroup = 'filterGroup' in env ? $.getenv('filterOutGroup').toLowerCase() : undefined;
+	  const ignoredDB = 'ignoredDbUuidList' in env ? 
+		   $.getenv('ignoredDbUuidList').split(',').map(l =&gt; replace(/^\s+|\s+$/, '')) :
+		   undefined;
+
+
+    const app = Application("DEVONthink 3");
+    const dbs = selectedDB ? 
+      [app.getDatabaseWithUuid(selectedDB)] :
+ 		  app.databases();
+
+    const items = []
+
+	dbs.forEach(db =&gt; {
+		const dbUUID = db.uuid();
+
+        // if selectedDbUUID not exists and theDbUUID in ignoredDbUuidList, ignore the db
+        if (! selectedDB &amp;&amp; (ignoredDB  &amp;&amp; ignoredDB.includes(dbuuid))) {
+            return;
+        }
+
+        const smartGroupList = db.smartGroups();
+        smartGroupList.forEach(sg =&gt; {
+            items.push({
+                title:    sg.name(),
+                subtitle: sg.name(),
+                arg:      sg.uuid()
+            });
+        })
+    })
+    return JSON.stringify({items: (items.length &gt; 0 ? 
+      items.sort((a,b) =&gt; a.title - b.title) : 
+      [{title: 'No SmartGroup …'}])
+    })
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>{var:selectedDbName}</string>
+				<key>title</key>
+				<string>List Smart Group</string>
+				<key>type</key>
+				<integer>7</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D883A945-0841-4E01-B919-C57B23109B59</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run(argv) {
+    var query = argv[0];
+    const DNt = Application('DEVONthink 3');
+	DNt.activate()
+    DNt.openWindowFor({ record: DNt.getRecordWithUuid(query) })
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>dtd</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>function run(argv) {
+  const dbName = "{query}";
+  const app = Application("DEVONthink 3");
+  const names = app.databases.name().sort();
+  const items = names.map((n) =&gt; {
+    const uuid = app.databases[n].uuid();
+    return {
+	  title: n, 
+       arg: "",
+       type: 'file',
+	   variables:  { "selectedDbUUID":  uuid , "selectedDbName": n },
+     } 
+  })
+  return JSON.stringify({items: items});
+}
+</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Get all DT databases</string>
+				<key>type</key>
+				<integer>7</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D73E8268-4276-4AAD-9CF3-91B29E6B79C9</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>dts</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Please wait ...</string>
+				<key>script</key>
+				<string>ObjC.import('Foundation');
+
+function run(argv) {
+  const query = (argv &amp;&amp; argv[0]) ? argv[0] : "";
+  const dbUUID = (() =&gt; {
+    const db = $.NSProcessInfo.processInfo.environment.js['selectedDbUUID'];
+    return db ? db.js : undefined;
+  })();
+  const app = Application("DEVONthink 3");
+  var databases = [];
+  if (dbUUID &amp;&amp; dbUUID.length &gt; 0) {
+	  databases.push(app.getDatabaseWithUuid(dbUUID));
+  } else {
+    databases = [...app.databases()];
+  }
+  const resultArray = [];
+
+  databases.forEach((db) =&gt; {
+        // search in record corresponding to the database
+
+    const resultList = app.search(query, { in: db.root()});
+    resultList.forEach(record =&gt; {
+      const item = {}
+      const itemName = record.name();
+      const itemScore = record.score();
+      const itemTags = record.tags();
+      const itemPath = record.path();
+      const itemUUID = record.uuid();
+
+      let itemLocation = record.location()
+      if (itemLocation.length &gt; 1) {
+            // 不是在根目录中，比如在文件夹 a/b 中，itemLocation 为 /a/b/，然后修改为 &gt; a &gt; b
+              // 之后结合所在的数据库名称，显示为 db &gt; a &gt; b
+         itemLocation = itemLocation.slice(0, -1).replace(/\//g, " &gt; ")
+       } else {
+           itemLocation = ""
+       }
+
+       item.type = "file:skipcheck";
+       item.title = itemName;
+       item.arg = itemPath;
+   	   item.score = itemScore;
+       item.subtitle = `📂 ${record.database.name()} ${itemLocation}`;
+       item.icon = { "type": "fileicon", "path": itemPath };
+
+	   const itemTagStr = itemTags.length &gt; 0 ? itemTags.join(", ") : "No Tags";
+
+       item.mods = {
+           cmd: { valid: true, arg: itemUUID, subtitle: `🏷 ${itemTagStr}`},
+           alt: { valid: true, arg: itemUUID, subtitle: "Reveal in DEVONthink" },
+           "cmd+alt": { valid: true, arg: query, subtitle: "Search in DEVONthink App" },
+           shift: {valid: true, arg: `[${itemName}](x-devonthink-item://${itemUUID})`,    
+                     subtitle: "Copy Markdown Link"}
+            };
+       item.text = {copy: `x-devonthink-item://${itemUUID}`,
+                    largetype: `x-devonthink-item://${itemUUID}`
+            };
+       item.quicklookurl = itemPath;
+
+	   resultArray.push(item);
+     }) /* forEach */
+  }) /* databases.forEach */
+  resultArray.sort((a,b) =&gt; {a.score - b.score});
+  const result = resultArray.length ? JSON.stringify({ "items": resultArray }): 
+       JSON.stringify({ "items": [{ "title": "No document..." }] });
+  return result;
+}
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>{var:selectedDbName}</string>
+				<key>title</key>
+				<string>Search in DEVONthink</string>
+				<key>type</key>
+				<integer>7</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>45F9755A-A2CF-4A08-BD58-F164B38BEE00</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>A7A99021-056A-4D32-BE8B-AC8E3069D486</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string># $1: uuid
+open "x-devonthink-item://${1}?reveal=1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0944EDAA-6AAB-4723-9064-E0D0D61B98FA</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>dtf</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>function run(argv) {
+  const se = Application("System Events");
+  
+  const supportPath = se.userDomain.applicationSupportFolder.posixPath();
+  
+  const plistPath = `${supportPath}/DEVONthink 3/Favorites.plist`;
+  const plist = se.propertyListFiles[plistPath];
+  
+  const items = [];
+  plist.propertyListItems().forEach(it =&gt; {
+    if ('UUID' in it.value()) {
+        const v = it.value();
+        items.push({title: v.Name, arg: v.UUID});
+    }
+  })
+  return( JSON.stringify({items: 
+      (items.length &gt; 0 ? items : [{title: "No favorite items", subtitle: "(*´･д･)?"}])
+    })
+  );
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>List Favorites</string>
+				<key>type</key>
+				<integer>7</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>70C53587-0B6B-4A52-9A1A-F6BBEAF3DD18</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>21BA232A-1DF1-4734-82D7-3D1E23865AC3</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>dtm</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>"use strict";
+ObjC.import('stdlib');
+
+function run(argv) {
+  const tags = argv[0].split(',').filter(t =&gt; !/^$/.test(t)).map(t =&gt; `tag: ${t} `).join('');
+  console.log(`"${tags}"`);
+  const env = $.NSProcessInfo.processInfo.environment.js;
+  const ignoredDBList = 'ignoredDbUuidList' in env ? 
+      $.getenv('ignoredDbUuidList', "").split(",").filter(t =&gt; !/^$/.test(t)) : 
+      undefined;
+
+  const app = Application("DEVONthink 3");
+  const items = [];
+  app.databases().filter(d =&gt; ! (ignoredDBList &amp;&amp; d.uuid() in ignoredDBList)).forEach(db =&gt; {
+    const result = app.search(tags, {in: db});
+    result.forEach(r =&gt; {
+      const uuid= r.uuid();
+      const path= r.path();
+      const loc = r.location();
+
+      items.push({
+        type: 'file',
+        title: r.name(),
+		subtitle: `📂 ${r.database.name()} ${loc}`,
+		arg: path,
+		icon: {type: "fileicon", path: path},
+         mods: {
+                cmd: {valid: true, arg: uuid, subtitle: `🏷  ${r.tags().join(', ')}`},
+                alt: {valid: true, arg: uuid, subtitle: "Reveal in DEVONthink"},
+                shift: {valid: true, arg: `[${r.name()}](x-devonthink-item://${uuid})`,
+                subtitle: "Copy Markdown Link"}
+         },
+         text: {
+             copy: `x-devonthink-item://${uuid}`,
+             largetype: `x-devonthink-item://${uuid}`
+         },
+    	     quicklookurl: path 
+      })
+    })
+  })
+  return JSON.stringify({items: (items.length &gt; 0) ? 
+     items :
+     [{title: "No Tags"}]
+   });
+}
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Search by Tags</string>
+				<key>type</key>
+				<integer>7</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>DB152084-DE5D-4ED3-8F90-EF5B355D6CEA</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run(argv) {
+  const query = argv[0].replace(/(\p{sc=Han}+)/ug," ~\1 ");
+  const app = Application("DEVONthink 3");
+  app.activate();
+  const r = app.inbox.root();
+  const tw = app.openWindowFor({record: r} , {force: true});
+  tw.searchQuery = query;
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2D82DAFE-E22A-4B84-8CCC-C0F173EB64D8</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>dtts</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Search in DEVONthink Window</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>704EC450-15D2-4744-8622-B248FCA997DE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run() {
+	const workspace = "{query}";
+    const app = Application("DEVONthink 3");
+    app.loadWorkspace(workspace);
+    app.activate()
+}</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E670F8C6-38F9-463A-8053-55D4C6634FCD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>dtw</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>function run() {
+  app = Application("DEVONthink 3");
+  workspaces = app.workspaces();
+  const items = [];
+  workspaces.forEach(w =&gt; 
+    items.push({title: w, subtitle:'', arg: w})
+  )
+  return JSON.stringify({items: (items.length &gt; 0 ?
+    items :
+	[{title: 'No workspaces', subtitle: "(*´･д･)?"}]
+  )});
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Load Workspace</string>
+				<key>type</key>
+				<integer>7</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>05E7224D-461F-4FD6-BBCC-B927ADEF0E9D</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>dtwa</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Save workspace named "{query}"</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>3FB7D56C-1BB4-4D7A-9729-466CCEA1CDC1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run() {
+	const ws = "{query}"
+     Application("DEVONthink 3").saveWorkspace(ws);
+}</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7061F819-A8CD-48F5-8F37-D2246D4D7C34</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>A re-make of "DEVONthink Search" without external dependencies on Python or Perl. All code is written in JavaScript. 
+
+Not yet fully compatible with the original, since the global variables are missing.</string>
+	<key>uidata</key>
+	<dict>
+		<key>05E7224D-461F-4FD6-BBCC-B927ADEF0E9D</key>
+		<dict>
+			<key>note</key>
+			<string>Load workspace</string>
+			<key>xpos</key>
+			<integer>205</integer>
+			<key>ypos</key>
+			<integer>1040</integer>
+		</dict>
+		<key>0944EDAA-6AAB-4723-9064-E0D0D61B98FA</key>
+		<dict>
+			<key>note</key>
+			<string>Reveal in DEVONthink</string>
+			<key>xpos</key>
+			<integer>895</integer>
+			<key>ypos</key>
+			<integer>510</integer>
+		</dict>
+		<key>0BAB7E3F-3E9B-450B-89AC-1A61A59CB08D</key>
+		<dict>
+			<key>note</key>
+			<string>Search with DT URL</string>
+			<key>xpos</key>
+			<integer>885</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+		<key>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</key>
+		<dict>
+			<key>note</key>
+			<string>Open with DEVONthink</string>
+			<key>xpos</key>
+			<integer>890</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>21BA232A-1DF1-4734-82D7-3D1E23865AC3</key>
+		<dict>
+			<key>note</key>
+			<string>Search in default engine</string>
+			<key>xpos</key>
+			<integer>900</integer>
+			<key>ypos</key>
+			<integer>695</integer>
+		</dict>
+		<key>2D82DAFE-E22A-4B84-8CCC-C0F173EB64D8</key>
+		<dict>
+			<key>note</key>
+			<string>Search in new DT window</string>
+			<key>xpos</key>
+			<integer>770</integer>
+			<key>ypos</key>
+			<integer>900</integer>
+		</dict>
+		<key>3FB7D56C-1BB4-4D7A-9729-466CCEA1CDC1</key>
+		<dict>
+			<key>note</key>
+			<string>Save workspace</string>
+			<key>xpos</key>
+			<integer>205</integer>
+			<key>ypos</key>
+			<integer>1200</integer>
+		</dict>
+		<key>45F9755A-A2CF-4A08-BD58-F164B38BEE00</key>
+		<dict>
+			<key>xpos</key>
+			<integer>415</integer>
+			<key>ypos</key>
+			<integer>335</integer>
+		</dict>
+		<key>704EC450-15D2-4744-8622-B248FCA997DE</key>
+		<dict>
+			<key>note</key>
+			<string>Search in DT window</string>
+			<key>xpos</key>
+			<integer>210</integer>
+			<key>ypos</key>
+			<integer>900</integer>
+		</dict>
+		<key>7061F819-A8CD-48F5-8F37-D2246D4D7C34</key>
+		<dict>
+			<key>xpos</key>
+			<integer>770</integer>
+			<key>ypos</key>
+			<integer>1205</integer>
+		</dict>
+		<key>70C53587-0B6B-4A52-9A1A-F6BBEAF3DD18</key>
+		<dict>
+			<key>note</key>
+			<string>List favorites</string>
+			<key>xpos</key>
+			<integer>215</integer>
+			<key>ypos</key>
+			<integer>515</integer>
+		</dict>
+		<key>A7A99021-056A-4D32-BE8B-AC8E3069D486</key>
+		<dict>
+			<key>note</key>
+			<string>Open in Default Editor</string>
+			<key>xpos</key>
+			<integer>890</integer>
+			<key>ypos</key>
+			<integer>340</integer>
+		</dict>
+		<key>D73E8268-4276-4AAD-9CF3-91B29E6B79C9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>10</integer>
+			<key>ypos</key>
+			<integer>335</integer>
+		</dict>
+		<key>D883A945-0841-4E01-B919-C57B23109B59</key>
+		<dict>
+			<key>note</key>
+			<string>Show all smart groups</string>
+			<key>xpos</key>
+			<integer>210</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>DB152084-DE5D-4ED3-8F90-EF5B355D6CEA</key>
+		<dict>
+			<key>note</key>
+			<string>List input tags</string>
+			<key>xpos</key>
+			<integer>215</integer>
+			<key>ypos</key>
+			<integer>700</integer>
+		</dict>
+		<key>E670F8C6-38F9-463A-8053-55D4C6634FCD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>770</integer>
+			<key>ypos</key>
+			<integer>1040</integer>
+		</dict>
+		<key>E7C45E80-CB9C-4915-ABA9-0C220A5E1773</key>
+		<dict>
+			<key>xpos</key>
+			<integer>215</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+		<key>F480BB2C-D5E5-4EDA-B3B4-69D176D25B8E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>415</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.2</string>
+	<key>webaddress</key>
+	<string>https://bru6.de/jxa</string>
+</dict>
+</plist>
