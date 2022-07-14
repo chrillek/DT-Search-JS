@@ -9,7 +9,7 @@ It doesn't yet implement the global variables available in the older on to exclu
 - DTD: select database for subsequent commands
 - DTS: search in all databases or only the one selected by DTD
 - DTSG: show all smart groups or only for the DB selected by DTD
-- DTF: list favorites – **does not** list databases, only groups and 
+- DTF: list favorites, **but not** databases, only groups and 
 records
 - DTWL: Load workspace
 - DTWS: Save workspace
