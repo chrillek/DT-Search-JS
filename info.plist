@@ -131,7 +131,7 @@
 				<key>modifiers</key>
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Show all smartgroups in database</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -1037,7 +1037,7 @@ DTTS - Search with query in DT</string>
 		<key>DB152084-DE5D-4ED3-8F90-EF5B355D6CEA</key>
 		<dict>
 			<key>note</key>
-			<string>List input tags</string>
+			<string>Search by tags</string>
 			<key>xpos</key>
 			<integer>215</integer>
 			<key>ypos</key>

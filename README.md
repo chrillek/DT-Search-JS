@@ -6,21 +6,20 @@ It doesn't yet implement the global variables available in the older on to exclu
 
 ## Keyboard shortcuts
 
-- <kbd>DTD</kbd> select database for subsequent commands
-- <kbd>DTS</kbd> search in all databases or only the one selected by DTD
-- <kbd>DTSG</kbd> show all smart groups or only for the DB selected by DTD
-- <kbd>DTF</kbd> list favorites, **but not** databases, only groups and 
-records
-- <kbd>DTWL</kbd> Load workspace
-- <kbd>DTWS</kbd> Save workspace
-- <kbd>DTT</kbd> Search for tags
-- <kbd>DTTS</kbd>: Search with query in DT
+- <kbd>DTD</kbd> select database for subsequent commands,
+- <kbd>DTS</kbd> search in all databases or only the one selected by DTD,
+- <kbd>DTSG</kbd> show all smart groups or only for the DB selected by DTD,
+- <kbd>DTF</kbd> list favorites, **but not** databases, only groups and records,
+- <kbd>DTWL</kbd> Load workspace,
+- <kbd>DTWS</kbd> Save workspace,
+- <kbd>DTTS</kbd>: Search with query in DT,
+- <kbd>DTT</kbd> Search for tags. This is a shortcut to <kbd>DTS</kbd> with a query like "tags: t1 tags: t2".
 
 ## Result order
 
 Results are returned in the following order
 - Databases (<kbd>DTD</kbd>) alphabetically by name,
-- Records (<kbd>DTS</kbd>, </bd>DTTS</kbd>) first by database, than by ranking,
+- Records (<kbd>DTS</kbd>, <kbd>DTTS</kbd>) first by database, than by ranking,
 - Tags (<kbd>DTT</kbd>) alphabetically by name,
 - Workspaces (<kbd>DTWL</kbd>) alphabetically by name,
 - Smart groups (<kbd>DTSG</kbd>) first by database, than by name.
