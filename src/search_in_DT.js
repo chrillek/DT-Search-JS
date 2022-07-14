@@ -1,3 +1,6 @@
+/* Search in the currently selected db (if 'selectedDbUUID' is set) or all databases
+   using the query passed in as the first argument */
+
 ObjC.import('Foundation');
 
 function run(argv) {
@@ -14,11 +17,15 @@ function run(argv) {
     databases = [...app.databases()];
   }
   const resultArray = [];
-
-  databases.forEach((db) => {
+  
+ databases.forEach((db) => {
         // search in record corresponding to the database
 
-    const resultList = app.search(query, { in: db.root()});
+/*    const resultList = (databases.length > 0 ? 
+        app.search(query, { in: db.root()}) :
+        app.search(query));
+    */
+    const resultList = app.search(query, {in: db.root()});
     resultList.forEach(record => {
       const item = {}
       const itemName = record.name();
@@ -29,11 +36,9 @@ function run(argv) {
 
       let itemLocation = record.location()
       if (itemLocation.length > 1) {
-            // 不是在根目录中，比如在文件夹 a/b 中，itemLocation 为 /a/b/，然后修改为 > a > b
-              // 之后结合所在的数据库名称，显示为 db > a > b
          itemLocation = itemLocation.slice(0, -1).replace(/\//g, " > ")
        } else {
-           itemLocation = ""
+         itemLocation = ""
        }
 
        item.type = "file:skipcheck";
@@ -60,7 +65,7 @@ function run(argv) {
 	   resultArray.push(item);
      }) /* forEach */
   }) /* databases.forEach */
-  resultArray.sort((a,b) => {a.score - b.score});
+  resultArray.sort((a,b) => b.score - a.score);
   const result = resultArray.length ? JSON.stringify({ "items": resultArray }): 
        JSON.stringify({ "items": [{ "title": "No document..." }] });
   return result;

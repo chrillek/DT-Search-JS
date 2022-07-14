@@ -219,16 +219,6 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>0BAB7E3F-3E9B-450B-89AC-1A61A59CB08D</string>
-				<key>modifiers</key>
-				<integer>1572864</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
 				<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
@@ -305,21 +295,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>ObjC.import('stdlib');
-
-function run(argv) {
-  const dbUUID = $.getenv('selectedDbUUID');
-  const app = Application("DEVONthink 3");
-  const db = app.getDatabaseWithUuid(dbUUID);
-  const tags = db.tagGroups.name();
-  const items = tags.sort().map(t =&gt; {
-    return {title: t, subtitle: 'Press enter to list all files with this tag',
-            variables: {selectedTag: t, selectedDbUUID: dbUUID}}
-    });
-  return items &amp;&amp; items.length &gt; 0 ? 
-     JSON.stringify({'items': items}) :
-     JSON.stringify({"items": [{title: "No Tags"}]});
-}
+				<string>osascript -l JavaScript list_all_tags.js
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -330,7 +306,7 @@ function run(argv) {
 				<key>title</key>
 				<string>List all Tags</string>
 				<key>type</key>
-				<integer>7</integer>
+				<integer>0</integer>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -367,42 +343,7 @@ function run(argv) {
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>ObjC.import('stdlib');
-
-function run(argv) {
-   const dbUUID = $.getenv('selectedDbUUID');
-   const tag = $.getenv('selectedTag');
-   const app = Application("DEVONthink 3");
-   const db = app.getDatabaseWithUuid(dbUUID);
-   const records = app.search(`tags: ${tag}`, {in: db});
-   const items = [];
-   records.forEach(r =&gt; {
-     const uuid = r.uuid();
-     const path = r.path();
-     const loc =  r.location().replace(/\/$/," &gt; ");
-     items.push({type: 'file',
-                 title: r.name(),
-				subtitle: `📂 ${r.database.name()} ${loc}`,
-				arg: path,
-				icon: {type: "fileicon", path: path},
-                 mods: {
-                  cmd: {valid: true, arg: uuid, subtitle: `🏷  ${r.tags().join(', ')}`},
-                  alt: {valid: true, arg: uuid, subtitle: "Reveal in DEVONthink"},
-                  shift: {valid: true, arg: `[${r.name()}](x-devonthink-item://${uuid})`,
-                         subtitle: "Copy Markdown Link"}
-                },
-                text: {
-                  copy: `x-devonthink-item://${uuid}`,
-                  largetype: `x-devonthink-item://${uuid}`
-                },
-			   quicklookurl: path 
-      }); /* items.push */
-   })
-   return items.length &gt; 0 ? 
-     JSON.stringify({items: items}) : 
-     JSON.stringify({items: [{title: "No record with these tags"}]});
-}
-</string>
+				<string>osascript -l JavaScript list_all_records.js </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -412,7 +353,7 @@ function run(argv) {
 				<key>title</key>
 				<string>List all Records with the Tags</string>
 				<key>type</key>
-				<integer>7</integer>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -431,18 +372,13 @@ function run(argv) {
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>function run(argv) {
-  var query = argv[0].replace(/(\p{sc=Han}+)/ug," ~\1 ");
-  var app = Application.currentApplication();
-  app.includeStandardAdditions = true;
-  app.doShellScript(`open 'x-devonthink://search?query=${encodeURIComponent(query)}'`);
-}</string>
+				<string>osascript -l JavaScript search_with_DT_URL.js "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>7</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -479,51 +415,7 @@ function run(argv) {
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>'use strict';
-ObjC.import('stdlib');
-
-function run(argv) {
-    // read environment variables
-    console.log('ok')
-    let env = $.NSProcessInfo.processInfo.environment;
-    env = env.js;
-    const selectedDB = 'selectedDbUuid' in env ? $.getenv('selectedDbUuid') : undefined;
-    console.log(selectedDB)
-    const filterOutGroup = 'filterGroup' in env ? $.getenv('filterOutGroup').toLowerCase() : undefined;
-	  const ignoredDB = 'ignoredDbUuidList' in env ? 
-		   $.getenv('ignoredDbUuidList').split(',').map(l =&gt; replace(/^\s+|\s+$/, '')) :
-		   undefined;
-
-
-    const app = Application("DEVONthink 3");
-    const dbs = selectedDB ? 
-      [app.getDatabaseWithUuid(selectedDB)] :
- 		  app.databases();
-
-    const items = []
-
-	dbs.forEach(db =&gt; {
-		const dbUUID = db.uuid();
-
-        // if selectedDbUUID not exists and theDbUUID in ignoredDbUuidList, ignore the db
-        if (! selectedDB &amp;&amp; (ignoredDB  &amp;&amp; ignoredDB.includes(dbuuid))) {
-            return;
-        }
-
-        const smartGroupList = db.smartGroups();
-        smartGroupList.forEach(sg =&gt; {
-            items.push({
-                title:    sg.name(),
-                subtitle: sg.name(),
-                arg:      sg.uuid()
-            });
-        })
-    })
-    return JSON.stringify({items: (items.length &gt; 0 ? 
-      items.sort((a,b) =&gt; a.title - b.title) : 
-      [{title: 'No SmartGroup …'}])
-    })
-}</string>
+				<string>osascript -l JavaScript list_all_smart_groups.js</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -531,9 +423,9 @@ function run(argv) {
 				<key>subtext</key>
 				<string>{var:selectedDbName}</string>
 				<key>title</key>
-				<string>List Smart Group</string>
+				<string>List Smart Groups</string>
 				<key>type</key>
-				<integer>7</integer>
+				<integer>0</integer>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -552,18 +444,13 @@ function run(argv) {
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>function run(argv) {
-    var query = argv[0];
-    const DNt = Application('DEVONthink 3');
-	DNt.activate()
-    DNt.openWindowFor({ record: DNt.getRecordWithUuid(query) })
-}</string>
+				<string>osascript -l JavaScript open_with_DT.js "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>7</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -600,22 +487,7 @@ function run(argv) {
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>function run(argv) {
-  const dbName = "{query}";
-  const app = Application("DEVONthink 3");
-  const names = app.databases.name().sort();
-  const items = names.map((n) =&gt; {
-    const uuid = app.databases[n].uuid();
-    return {
-	  title: n, 
-       arg: "",
-       type: 'file',
-	   variables:  { "selectedDbUUID":  uuid , "selectedDbName": n },
-     } 
-  })
-  return JSON.stringify({items: items});
-}
-</string>
+				<string>osascript -l JavaScript select_DB.js</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -625,7 +497,7 @@ function run(argv) {
 				<key>title</key>
 				<string>Get all DT databases</string>
 				<key>type</key>
-				<integer>7</integer>
+				<integer>0</integer>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -664,74 +536,7 @@ function run(argv) {
 				<key>runningsubtext</key>
 				<string>Please wait ...</string>
 				<key>script</key>
-				<string>ObjC.import('Foundation');
-
-function run(argv) {
-  const query = (argv &amp;&amp; argv[0]) ? argv[0] : "";
-  const dbUUID = (() =&gt; {
-    const db = $.NSProcessInfo.processInfo.environment.js['selectedDbUUID'];
-    return db ? db.js : undefined;
-  })();
-  const app = Application("DEVONthink 3");
-  var databases = [];
-  if (dbUUID &amp;&amp; dbUUID.length &gt; 0) {
-	  databases.push(app.getDatabaseWithUuid(dbUUID));
-  } else {
-    databases = [...app.databases()];
-  }
-  const resultArray = [];
-
-  databases.forEach((db) =&gt; {
-        // search in record corresponding to the database
-
-    const resultList = app.search(query, { in: db.root()});
-    resultList.forEach(record =&gt; {
-      const item = {}
-      const itemName = record.name();
-      const itemScore = record.score();
-      const itemTags = record.tags();
-      const itemPath = record.path();
-      const itemUUID = record.uuid();
-
-      let itemLocation = record.location()
-      if (itemLocation.length &gt; 1) {
-            // 不是在根目录中，比如在文件夹 a/b 中，itemLocation 为 /a/b/，然后修改为 &gt; a &gt; b
-              // 之后结合所在的数据库名称，显示为 db &gt; a &gt; b
-         itemLocation = itemLocation.slice(0, -1).replace(/\//g, " &gt; ")
-       } else {
-           itemLocation = ""
-       }
-
-       item.type = "file:skipcheck";
-       item.title = itemName;
-       item.arg = itemPath;
-   	   item.score = itemScore;
-       item.subtitle = `📂 ${record.database.name()} ${itemLocation}`;
-       item.icon = { "type": "fileicon", "path": itemPath };
-
-	   const itemTagStr = itemTags.length &gt; 0 ? itemTags.join(", ") : "No Tags";
-
-       item.mods = {
-           cmd: { valid: true, arg: itemUUID, subtitle: `🏷 ${itemTagStr}`},
-           alt: { valid: true, arg: itemUUID, subtitle: "Reveal in DEVONthink" },
-           "cmd+alt": { valid: true, arg: query, subtitle: "Search in DEVONthink App" },
-           shift: {valid: true, arg: `[${itemName}](x-devonthink-item://${itemUUID})`,    
-                     subtitle: "Copy Markdown Link"}
-            };
-       item.text = {copy: `x-devonthink-item://${itemUUID}`,
-                    largetype: `x-devonthink-item://${itemUUID}`
-            };
-       item.quicklookurl = itemPath;
-
-	   resultArray.push(item);
-     }) /* forEach */
-  }) /* databases.forEach */
-  resultArray.sort((a,b) =&gt; {a.score - b.score});
-  const result = resultArray.length ? JSON.stringify({ "items": resultArray }): 
-       JSON.stringify({ "items": [{ "title": "No document..." }] });
-  return result;
-}
-</string>
+				<string>osascript -l JavaScript search_in_DT.js "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -741,7 +546,7 @@ function run(argv) {
 				<key>title</key>
 				<string>Search in DEVONthink</string>
 				<key>type</key>
-				<integer>7</integer>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -894,7 +699,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>dtm</string>
+				<string>dtt</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -906,62 +711,18 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>"use strict";
-ObjC.import('stdlib');
-
-function run(argv) {
-  const tags = argv[0].split(',').filter(t =&gt; !/^$/.test(t)).map(t =&gt; `tag: ${t} `).join('');
-  console.log(`"${tags}"`);
-  const env = $.NSProcessInfo.processInfo.environment.js;
-  const ignoredDBList = 'ignoredDbUuidList' in env ? 
-      $.getenv('ignoredDbUuidList', "").split(",").filter(t =&gt; !/^$/.test(t)) : 
-      undefined;
-
-  const app = Application("DEVONthink 3");
-  const items = [];
-  app.databases().filter(d =&gt; ! (ignoredDBList &amp;&amp; d.uuid() in ignoredDBList)).forEach(db =&gt; {
-    const result = app.search(tags, {in: db});
-    result.forEach(r =&gt; {
-      const uuid= r.uuid();
-      const path= r.path();
-      const loc = r.location();
-
-      items.push({
-        type: 'file',
-        title: r.name(),
-		subtitle: `📂 ${r.database.name()} ${loc}`,
-		arg: path,
-		icon: {type: "fileicon", path: path},
-         mods: {
-                cmd: {valid: true, arg: uuid, subtitle: `🏷  ${r.tags().join(', ')}`},
-                alt: {valid: true, arg: uuid, subtitle: "Reveal in DEVONthink"},
-                shift: {valid: true, arg: `[${r.name()}](x-devonthink-item://${uuid})`,
-                subtitle: "Copy Markdown Link"}
-         },
-         text: {
-             copy: `x-devonthink-item://${uuid}`,
-             largetype: `x-devonthink-item://${uuid}`
-         },
-    	     quicklookurl: path 
-      })
-    })
-  })
-  return JSON.stringify({items: (items.length &gt; 0) ? 
-     items :
-     [{title: "No Tags"}]
-   });
-}
+				<string>osascript -l JavaScript search_by_tags.js "$1"
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string></string>
+				<string>Separate tags by commas or semicolons</string>
 				<key>title</key>
 				<string>Search by Tags</string>
 				<key>type</key>
-				<integer>7</integer>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -980,20 +741,13 @@ function run(argv) {
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>function run(argv) {
-  const query = argv[0].replace(/(\p{sc=Han}+)/ug," ~\1 ");
-  const app = Application("DEVONthink 3");
-  app.activate();
-  const r = app.inbox.root();
-  const tw = app.openWindowFor({record: r} , {force: true});
-  tw.searchQuery = query;
-}</string>
+				<string>osascript -l JavaScript search_in_new_window.js "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>7</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -1010,9 +764,9 @@ function run(argv) {
 				<key>keyword</key>
 				<string>dtts</string>
 				<key>subtext</key>
-				<string></string>
+				<string>⌘ to search in new window</string>
 				<key>text</key>
-				<string>Search in DEVONthink Window</string>
+				<string>Search with query in DT</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -1029,20 +783,15 @@ function run(argv) {
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>68</integer>
+				<integer>102</integer>
 				<key>script</key>
-				<string>function run() {
-	const workspace = "{query}";
-    const app = Application("DEVONthink 3");
-    app.loadWorkspace(workspace);
-    app.activate()
-}</string>
+				<string>osascript -l JavaScript load_workspace.js "$1"</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>7</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -1067,7 +816,7 @@ function run(argv) {
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>dtw</string>
+				<string>dtwl</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -1079,18 +828,7 @@ function run(argv) {
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>function run() {
-  app = Application("DEVONthink 3");
-  workspaces = app.workspaces();
-  const items = [];
-  workspaces.forEach(w =&gt; 
-    items.push({title: w, subtitle:'', arg: w})
-  )
-  return JSON.stringify({items: (items.length &gt; 0 ?
-    items :
-	[{title: 'No workspaces', subtitle: "(*´･д･)?"}]
-  )});
-}</string>
+				<string>osascript -l JavaScript list_workspaces.js </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1100,7 +838,7 @@ function run(argv) {
 				<key>title</key>
 				<string>Load Workspace</string>
 				<key>type</key>
-				<integer>7</integer>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -1117,7 +855,7 @@ function run(argv) {
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>dtwa</string>
+				<string>dtws</string>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
@@ -1138,18 +876,15 @@ function run(argv) {
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>68</integer>
+				<integer>102</integer>
 				<key>script</key>
-				<string>function run() {
-	const ws = "{query}"
-     Application("DEVONthink 3").saveWorkspace(ws);
-}</string>
+				<string>osascript -l JavaScript save_workspace.js</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>7</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -1162,7 +897,17 @@ function run(argv) {
 	<key>readme</key>
 	<string>A re-make of "DEVONthink Search" without external dependencies on Python or Perl. All code is written in JavaScript. 
 
-Not yet fully compatible with the original, since the global variables are missing.</string>
+Not yet fully compatible with the original, since the global variables are missing and CJK support is minimal
+
+DTD - select database for subsequent commands
+DTS - search in all databases or only the one selected by DTD
+DTSG - show all smart groups or only for the DB selected by DTD
+DTF - list favorites – DOES NOT list databases, only groups and 
+      records
+DTWL - Load workspace
+DTWS - Save workspace
+DTT  - Search for tags
+DTTS - Search with query in DT</string>
 	<key>uidata</key>
 	<dict>
 		<key>05E7224D-461F-4FD6-BBCC-B927ADEF0E9D</key>
@@ -1230,8 +975,10 @@ Not yet fully compatible with the original, since the global variables are missi
 		</dict>
 		<key>45F9755A-A2CF-4A08-BD58-F164B38BEE00</key>
 		<dict>
+			<key>note</key>
+			<string>Search in selected database</string>
 			<key>xpos</key>
-			<integer>415</integer>
+			<integer>445</integer>
 			<key>ypos</key>
 			<integer>335</integer>
 		</dict>
@@ -1240,7 +987,7 @@ Not yet fully compatible with the original, since the global variables are missi
 			<key>note</key>
 			<string>Search in DT window</string>
 			<key>xpos</key>
-			<integer>210</integer>
+			<integer>205</integer>
 			<key>ypos</key>
 			<integer>900</integer>
 		</dict>
@@ -1249,7 +996,7 @@ Not yet fully compatible with the original, since the global variables are missi
 			<key>xpos</key>
 			<integer>770</integer>
 			<key>ypos</key>
-			<integer>1205</integer>
+			<integer>1200</integer>
 		</dict>
 		<key>70C53587-0B6B-4A52-9A1A-F6BBEAF3DD18</key>
 		<dict>
@@ -1271,6 +1018,8 @@ Not yet fully compatible with the original, since the global variables are missi
 		</dict>
 		<key>D73E8268-4276-4AAD-9CF3-91B29E6B79C9</key>
 		<dict>
+			<key>note</key>
+			<string>Select database</string>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
@@ -1281,7 +1030,7 @@ Not yet fully compatible with the original, since the global variables are missi
 			<key>note</key>
 			<string>Show all smart groups</string>
 			<key>xpos</key>
-			<integer>210</integer>
+			<integer>245</integer>
 			<key>ypos</key>
 			<integer>160</integer>
 		</dict>
@@ -1303,15 +1052,17 @@ Not yet fully compatible with the original, since the global variables are missi
 		</dict>
 		<key>E7C45E80-CB9C-4915-ABA9-0C220A5E1773</key>
 		<dict>
+			<key>note</key>
+			<string>List all tags</string>
 			<key>xpos</key>
-			<integer>215</integer>
+			<integer>240</integer>
 			<key>ypos</key>
 			<integer>10</integer>
 		</dict>
 		<key>F480BB2C-D5E5-4EDA-B3B4-69D176D25B8E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>415</integer>
+			<integer>445</integer>
 			<key>ypos</key>
 			<integer>10</integer>
 		</dict>
@@ -1319,7 +1070,7 @@ Not yet fully compatible with the original, since the global variables are missi
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.2</string>
+	<string>1.3</string>
 	<key>webaddress</key>
 	<string>https://bru6.de/jxa</string>
 </dict>

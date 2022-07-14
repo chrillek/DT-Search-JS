@@ -20,7 +20,7 @@ function run(argv) {
                   cmd: {valid: true, arg: uuid, subtitle: `🏷  ${r.tags().join(', ')}`},
                   alt: {valid: true, arg: uuid, subtitle: "Reveal in DEVONthink"},
                   shift: {valid: true, arg: `[${r.name()}](x-devonthink-item://${uuid})`,
-                         subtitle: "Copy Markdown Link"}
+                         subtitle: "Copy Markdown Link"},
                 },
                 text: {
                   copy: `x-devonthink-item://${uuid}`,

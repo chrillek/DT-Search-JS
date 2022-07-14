@@ -1,4 +1,4 @@
-function run() {
-	const ws = "{query}"
+function run(argv) {
+	const ws = argv[0];
      Application("DEVONthink 3").saveWorkspace(ws);
 }
