@@ -22,5 +22,5 @@ Results are returned in the following order
 - Records (<kbd>DTS</kbd>, <kbd>DTTS</kbd>) first by database, than by ranking,
 - Tags (<kbd>DTT</kbd>) alphabetically by name,
 - Workspaces (<kbd>DTWL</kbd>) alphabetically by name,
-- Smart groups (<kbd>DTSG</kbd>) first by database, than by name.
-- Favorites (<kbd>DTF</kbd>) in the order shown in DEVONthink
+- Smart groups (<kbd>DTSG</kbd>) first by database, than by name,
+- Favorites (<kbd>DTF</kbd>) in the order shown in DEVONthink.
