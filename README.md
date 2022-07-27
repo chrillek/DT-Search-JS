@@ -9,7 +9,7 @@ It doesn't yet implement the global variables available in the older on to exclu
 - <kbd>DTD</kbd> select database for subsequent commands,
 - <kbd>DTS</kbd> search in all databases or only the one selected by DTD,
 - <kbd>DTSG</kbd> show all smart groups or only for the DB selected by DTD,
-- <kbd>DTF</kbd> list favorites, **but not** databases, only groups and records,
+- <kbd>DTF</kbd> list favorites. Databases in favorites currently not open will be opened by this command
 - <kbd>DTWL</kbd> Load workspace,
 - <kbd>DTWS</kbd> Save workspace,
 - <kbd>DTTS</kbd>: Search with query in DT,
@@ -23,3 +23,4 @@ Results are returned in the following order
 - Tags (<kbd>DTT</kbd>) alphabetically by name,
 - Workspaces (<kbd>DTWL</kbd>) alphabetically by name,
 - Smart groups (<kbd>DTSG</kbd>) first by database, than by name.
+- Favorites (<kbd>DTF</kbd>) in the order shown in DEVONthink
