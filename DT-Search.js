@@ -5,26 +5,45 @@ ObjC.import("Foundation");
 /* Mapping from command names to functions in this file */
 
 const cmdMap = {
-  list_databases: listDatabases /* select_DB */,
-  list_smartgroups: listSmartgroups /* list_all_smartgroups */,
-  list_tags: listTags /*list_all_tags */,
-  list_favorites: listFavorites /* list_favorites */,
-  list_workspaces: listWorkspaces /* list_workspaces */,
+  list_databases: listDatabases /* DTD, select_DB */,
+  list_smartgroups: listSmartgroups /* DTSG, list_all_smartgroups */,
+  list_tags: listTags /* DTT, list_all_tags */,
+  list_favorites: listFavorites /* DTF, list_favorites */,
+  list_workspaces: listWorkspaces /* DTLW, list_workspaces */,
   search_for_alfred:
-    searchForAlfred /* search_in_DT, search_by_tags with query. This returns the results from DT to Alfred */,
-  open_record: openRecord /* open_with_DT */,
-  records_with_tag: recordsWithTag /* list_all_records */,
+    searchForAlfred /* DTS, search_by_tags with query. This returns the results from DT to Alfred */,
+  open_record: openRecord /* open_with_DT, expects UUID */,
+  records_with_tag: recordsWithTag /*  with tag passed as parameter */,
   search_in_dt:
     searchInDT /* search_with_DT_URL, search_in_new_window. This runs the query in DT and populates the result window there  */,
   load_workspace: loadWorkspace /* load_workspace */,
   save_workspace: saveWorkspace /* save_workspace */,
+  list_searches:  listSearches /* list the last 10 searches (should the no. be configurable?) */,
 };
 
 const app = Application("DEVONthink 3");
+const searchFile = 'searches.json';
+const error = $();
+const savedSearches = loadSearches();
 
 /* get curApp object for shell commands */
 const curApp = Application.currentApplication();
 curApp.includeStandardAdditions = true;
+
+function loadSearches() {
+  const string = $.NSString.stringWithContentsOfFileEncodingError($(searchFile),$.NSUTF8StringEncoding, error);
+  if (string && string.js) {
+    return JSON.parse(string.js);
+  } else {
+    return [];
+  }
+}
+
+function saveSearches() {
+ // console.log(`Saving ...${savedSearches}`);
+  const string = $(JSON.stringify(savedSearches));
+  string.writeToFileAtomicallyEncodingError($(searchFile), false, $.NSUTF8StringEncoding, error);
+}
 
 /* Get an environment variable and return its value as JS string or undefined if it doesn't exist */
 function getEnv(name) {
@@ -114,20 +133,27 @@ function searchForAlfred(arg) {
   if (arg.length > 1) {
     /* search for tags: Split the tags passed in at , and ;
        build a query like "tags: tag1 tags: tag2" etc. */
-    query = query
+    query = arg[1]
       .split(/[,;]\s*/)
       .filter((t) => !/^$/.test(t))
       .map((t) => `tags: ${t} `)
       .join("");
+    console.log(query);
     //    curApp.displayAlert(`"${query}"`);
   }
   const databases = getDB(true); /* Array with all databases to search */
   const resultArray = [{ query: query }];
-  databases.forEach((db) => {
+  savedSearches.push({q: query, db: (databases.length > 1 ? undefined : databases[0])});
+  if (savedSearches.length > 10) {
+    savedSearches.shift();
+  }
+  saveSearches();
+
+  databases.forEach(db => {
     // search in record corresponding to the database
     const resultList = app.search(query, { in: db.root() });
 
-    resultList.forEach((record) => {
+    resultList.forEach(record => {
       const uuid = record.uuid();
       const location = (() => {
         const loc = record.location();
@@ -148,7 +174,7 @@ function searchForAlfred(arg) {
         score: record.score(),
         tags: tagStr,
         arg: path /* To open in default editor */,
-        subtitle: `📂 ${db.name()} ${location}`,
+        subtitle: `📂 ${db.name()}: ${location}`,
         icon: { type: "fileicon", path: path },
         mods: {
           cmd: { valid: true, arg: uuid, subtitle: `🏷 ${tagStr}` },
@@ -245,16 +271,11 @@ function listFavorites() {
   const plistPath = `${supportPath}/DEVONthink 3/Favorites.plist`;
   const plist = se.propertyListFiles[plistPath];
 
-  /*const items = plist.propertyListItems().filter(it => 'UUID' in it.value()).map(it => {
-          const v = it.value();
-          return({title: v.Name, arg: v.UUID});
-      })
-      */
   const items = plist.propertyListItems().map((it) => {
     const v = it.value();
     if ("UUID" in v) {
       /* Normal record */
-      return { title: v.Name, arg: v.UUID };
+      return { title: `📁 v.Name`, arg: v.UUID};
     } else if ("Path" in v) {
       /* Database */
         const uuid = (() => {
@@ -276,13 +297,23 @@ function listWorkspaces() {
   return items.length ? items : [{ title: "No workspaces" }];
 }
 
-function loadWorkspace() {
+function loadWorkspace(argv) {
   const workspace = checkArg(argv);
   app.loadWorkspace(workspace);
   app.activate();
 }
 
-function saveWorkspace(arg) {
-  const workspace = checkArg(arg);
+function saveWorkspace(argv) {
+  const workspace = checkArg(argv);
   Application("DEVONthink 3").saveWorkspace(workspace);
+}
+
+function listSearches() {
+  loadSearches();
+  const items = savedSearches.map(s => {
+    const dbString = s.db ||'All databases';
+    const scopeString = (s.db ? ` scope:${s.db}`: '');
+    return {title: `${s.q} (${dbString})`, arg: `${s.q}${scopeString}`};
+  })
+  return items.length ? items : [{ title: "No queries saved" }];
 }

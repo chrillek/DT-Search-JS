@@ -2,7 +2,7 @@
 
 This workflow re-implements an older one also available on GitHub which depends on Python and other external tools. The new version only uses JavaScript, so that it doesn't depend on certain tools being installed.
 
-It doesn't yet implement the global variables available in the older on to exclude a group or a list of databases. 
+It doesn't yet implement the global variables available in the older one to exclude a group or a list of databases. 
 
 ## Keyboard shortcuts
 
