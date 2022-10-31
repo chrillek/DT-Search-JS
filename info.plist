@@ -81,19 +81,9 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>0BAB7E3F-3E9B-450B-89AC-1A61A59CB08D</string>
+				<string>5D6F95FA-2F7D-4E1D-BB1D-3CED3E09CE84</string>
 				<key>modifiers</key>
 				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>2D82DAFE-E22A-4B84-8CCC-C0F173EB64D8</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -154,7 +144,7 @@
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Open in DT</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -243,7 +233,7 @@
 				<key>modifiers</key>
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Open in DT</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -253,7 +243,7 @@
 				<key>modifiers</key>
 				<integer>131072</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Open in default program</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -295,7 +285,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>osascript -l JavaScript list_all_tags.js
+				<string>osascript -l JavaScript DT-Search.js list_tags
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -343,7 +333,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>osascript -l JavaScript list_all_records.js </string>
+				<string>osascript -l JavaScript DT-Search.js records_with_tag "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -351,7 +341,7 @@
 				<key>subtext</key>
 				<string>{var:selectedDbName}</string>
 				<key>title</key>
-				<string>List all Records with the Tags</string>
+				<string>Records with tag "$1"</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -372,7 +362,7 @@
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>osascript -l JavaScript search_with_DT_URL.js "$1"</string>
+				<string>osascript -l JavaScript DT-Search.js open_record "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -415,7 +405,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>osascript -l JavaScript list_all_smart_groups.js</string>
+				<string>osascript -l JavaScript DT-Search.js list_smartgroups</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -444,7 +434,7 @@
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>osascript -l JavaScript open_with_DT.js "$1"</string>
+				<string>osascript -l JavaScript DT-Search.js open_record "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -487,7 +477,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>osascript -l JavaScript select_DB.js</string>
+				<string>osascript -l JavaScript DT-Search.js list_databases</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -536,7 +526,7 @@
 				<key>runningsubtext</key>
 				<string>Please wait ...</string>
 				<key>script</key>
-				<string>osascript -l JavaScript search_in_DT.js "$1"</string>
+				<string>osascript -l JavaScript DT-Search.js search_for_alfred "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -624,26 +614,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>function run(argv) {
-  const se = Application("System Events");
-  
-  const supportPath = se.userDomain.applicationSupportFolder.posixPath();
-  
-  const plistPath = `${supportPath}/DEVONthink 3/Favorites.plist`;
-  const plist = se.propertyListFiles[plistPath];
-  
-  const items = [];
-  plist.propertyListItems().forEach(it =&gt; {
-    if ('UUID' in it.value()) {
-        const v = it.value();
-        items.push({title: v.Name, arg: v.UUID});
-    }
-  })
-  return( JSON.stringify({items: 
-      (items.length &gt; 0 ? items : [{title: "No favorite items", subtitle: "(*´･д･)?"}])
-    })
-  );
-}</string>
+				<string>osascript -l JavaScript DT-Search.js list_favorites</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -653,7 +624,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>title</key>
 				<string>List Favorites</string>
 				<key>type</key>
-				<integer>7</integer>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -711,7 +682,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>osascript -l JavaScript search_by_tags.js "$1"
+				<string>osascript -l JavaScript DT-Search.js search_for_alfred tags "$1"
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -739,9 +710,9 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>68</integer>
+				<integer>102</integer>
 				<key>script</key>
-				<string>osascript -l JavaScript search_in_new_window.js "$1"</string>
+				<string>osascript -l JavaScript DT-Search.js search_in_dt "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -752,7 +723,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>2D82DAFE-E22A-4B84-8CCC-C0F173EB64D8</string>
+			<string>5D6F95FA-2F7D-4E1D-BB1D-3CED3E09CE84</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -764,7 +735,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>keyword</key>
 				<string>dtts</string>
 				<key>subtext</key>
-				<string>⌘ to search in new window</string>
+				<string></string>
 				<key>text</key>
 				<string>Search with query in DT</string>
 				<key>withspace</key>
@@ -785,7 +756,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>osascript -l JavaScript load_workspace.js "$1"</string>
+				<string>osascript -l JavaScript DT-Search.js load_workspace "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -828,7 +799,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>osascript -l JavaScript list_workspaces.js </string>
+				<string>osascript -l JavaScript DT-Search.js list_workspaces</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -878,7 +849,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>osascript -l JavaScript save_workspace.js</string>
+				<string>osascript -l JavaScript DT-Search.js save_workspace "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -915,158 +886,158 @@ DTTS - Search with query in DT</string>
 			<key>note</key>
 			<string>Load workspace</string>
 			<key>xpos</key>
-			<integer>205</integer>
+			<real>205</real>
 			<key>ypos</key>
-			<integer>1040</integer>
+			<real>1040</real>
 		</dict>
 		<key>0944EDAA-6AAB-4723-9064-E0D0D61B98FA</key>
 		<dict>
 			<key>note</key>
 			<string>Reveal in DEVONthink</string>
 			<key>xpos</key>
-			<integer>895</integer>
+			<real>895</real>
 			<key>ypos</key>
-			<integer>510</integer>
+			<real>510</real>
 		</dict>
 		<key>0BAB7E3F-3E9B-450B-89AC-1A61A59CB08D</key>
 		<dict>
 			<key>note</key>
 			<string>Search with DT URL</string>
 			<key>xpos</key>
-			<integer>885</integer>
+			<real>885</real>
 			<key>ypos</key>
-			<integer>10</integer>
+			<real>15</real>
 		</dict>
 		<key>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</key>
 		<dict>
 			<key>note</key>
 			<string>Open with DEVONthink</string>
 			<key>xpos</key>
-			<integer>890</integer>
+			<real>890</real>
 			<key>ypos</key>
-			<integer>160</integer>
+			<real>160</real>
 		</dict>
 		<key>21BA232A-1DF1-4734-82D7-3D1E23865AC3</key>
 		<dict>
 			<key>note</key>
 			<string>Search in default engine</string>
 			<key>xpos</key>
-			<integer>900</integer>
+			<real>900</real>
 			<key>ypos</key>
-			<integer>695</integer>
-		</dict>
-		<key>2D82DAFE-E22A-4B84-8CCC-C0F173EB64D8</key>
-		<dict>
-			<key>note</key>
-			<string>Search in new DT window</string>
-			<key>xpos</key>
-			<integer>770</integer>
-			<key>ypos</key>
-			<integer>900</integer>
+			<real>695</real>
 		</dict>
 		<key>3FB7D56C-1BB4-4D7A-9729-466CCEA1CDC1</key>
 		<dict>
 			<key>note</key>
 			<string>Save workspace</string>
 			<key>xpos</key>
-			<integer>205</integer>
+			<real>205</real>
 			<key>ypos</key>
-			<integer>1200</integer>
+			<real>1200</real>
 		</dict>
 		<key>45F9755A-A2CF-4A08-BD58-F164B38BEE00</key>
 		<dict>
 			<key>note</key>
 			<string>Search in selected database</string>
 			<key>xpos</key>
-			<integer>445</integer>
+			<real>440</real>
 			<key>ypos</key>
-			<integer>335</integer>
+			<real>335</real>
+		</dict>
+		<key>5D6F95FA-2F7D-4E1D-BB1D-3CED3E09CE84</key>
+		<dict>
+			<key>xpos</key>
+			<real>770</real>
+			<key>ypos</key>
+			<real>900</real>
 		</dict>
 		<key>704EC450-15D2-4744-8622-B248FCA997DE</key>
 		<dict>
 			<key>note</key>
 			<string>Search in DT window</string>
 			<key>xpos</key>
-			<integer>205</integer>
+			<real>205</real>
 			<key>ypos</key>
-			<integer>900</integer>
+			<real>900</real>
 		</dict>
 		<key>7061F819-A8CD-48F5-8F37-D2246D4D7C34</key>
 		<dict>
 			<key>xpos</key>
-			<integer>770</integer>
+			<real>770</real>
 			<key>ypos</key>
-			<integer>1200</integer>
+			<real>1200</real>
 		</dict>
 		<key>70C53587-0B6B-4A52-9A1A-F6BBEAF3DD18</key>
 		<dict>
 			<key>note</key>
 			<string>List favorites</string>
 			<key>xpos</key>
-			<integer>215</integer>
+			<real>215</real>
 			<key>ypos</key>
-			<integer>515</integer>
+			<real>515</real>
 		</dict>
 		<key>A7A99021-056A-4D32-BE8B-AC8E3069D486</key>
 		<dict>
 			<key>note</key>
 			<string>Open in Default Editor</string>
 			<key>xpos</key>
-			<integer>890</integer>
+			<real>890</real>
 			<key>ypos</key>
-			<integer>340</integer>
+			<real>340</real>
 		</dict>
 		<key>D73E8268-4276-4AAD-9CF3-91B29E6B79C9</key>
 		<dict>
 			<key>note</key>
 			<string>Select database</string>
 			<key>xpos</key>
-			<integer>10</integer>
+			<real>30</real>
 			<key>ypos</key>
-			<integer>335</integer>
+			<real>335</real>
 		</dict>
 		<key>D883A945-0841-4E01-B919-C57B23109B59</key>
 		<dict>
 			<key>note</key>
 			<string>Show all smart groups</string>
 			<key>xpos</key>
-			<integer>245</integer>
+			<real>245</real>
 			<key>ypos</key>
-			<integer>160</integer>
+			<real>160</real>
 		</dict>
 		<key>DB152084-DE5D-4ED3-8F90-EF5B355D6CEA</key>
 		<dict>
 			<key>note</key>
 			<string>Search by tags</string>
 			<key>xpos</key>
-			<integer>215</integer>
+			<real>215</real>
 			<key>ypos</key>
-			<integer>700</integer>
+			<real>700</real>
 		</dict>
 		<key>E670F8C6-38F9-463A-8053-55D4C6634FCD</key>
 		<dict>
 			<key>xpos</key>
-			<integer>770</integer>
+			<real>770</real>
 			<key>ypos</key>
-			<integer>1040</integer>
+			<real>1040</real>
 		</dict>
 		<key>E7C45E80-CB9C-4915-ABA9-0C220A5E1773</key>
 		<dict>
 			<key>note</key>
 			<string>List all tags</string>
 			<key>xpos</key>
-			<integer>240</integer>
+			<real>240</real>
 			<key>ypos</key>
-			<integer>10</integer>
+			<real>15</real>
 		</dict>
 		<key>F480BB2C-D5E5-4EDA-B3B4-69D176D25B8E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>445</integer>
+			<real>445</real>
 			<key>ypos</key>
-			<integer>10</integer>
+			<real>15</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
