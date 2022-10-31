@@ -7,8 +7,14 @@ It doesn't yet implement the global variables available in the older one to excl
 ## Keyboard shortcuts
 
 - <kbd>DTD</kbd> select database for subsequent commands,
-- <kbd>DTS</kbd> search in all databases or only the one selected by DTD,
-- <kbd>DTSG</kbd> show all smart groups or only for the DB selected by DTD,
+  - <kbd>Enter</kbd>: search in this database
+  - <kbd>Opt-Enter</kbd>: show all smart groups for this database
+  - <kbd>Cmd-Enter</kbd>: show all tags for this database
+- <kbd>DTS</kbd>: search in all databases,
+  - <kbd>Enter</kbd>: open in default program
+  - <kbd>Cmd+Enter</kbd>: open in DEVONthink
+  - <kbd>Opt+Enter</kbd>: reveal in DEVONthink
+- <kbd>DTSG</kbd> show all smart groups,
 - <kbd>DTF</kbd> list favorites. Databases in favorites currently not open will be opened by this command
 - <kbd>DTWL</kbd> Load workspace,
 - <kbd>DTWS</kbd> Save workspace,

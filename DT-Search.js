@@ -245,7 +245,7 @@ function listSmartgroups() {
       });
     });
   });
-  return items.length > 0 ? items : [{ title: "No SmartGroup …" }];
+  return items.length > 0 ? items : [{ title: "No SmartGroups …" }];
 }
 
 /* Open search with query passed in arg in DT */
