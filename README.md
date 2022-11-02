@@ -2,7 +2,7 @@
 
 This workflow re-implements an older one also available on GitHub which depends on Python and other external tools. The new version only uses JavaScript, so that it doesn't depend on certain tools being installed.
 
-It doesn't yet implement the global variables available in the older one to exclude a group or a list of databases. 
+It doesn't yet implement the global variables available in the previous workflow to exclude a group or a list of databases. 
 
 ## Keyboard shortcuts
 
@@ -10,6 +10,7 @@ It doesn't yet implement the global variables available in the older one to excl
   - <kbd>Enter</kbd>: search in this database
   - <kbd>Opt-Enter</kbd>: show all smart groups for this database
   - <kbd>Cmd-Enter</kbd>: show all tags for this database
+  - <kbd>Ctrl-Enter</kbd>: show all groups for this database (excluding Tags and Trash)
 - <kbd>DTS</kbd>: search in all databases,
   - <kbd>Enter</kbd>: open in default program
   - <kbd>Cmd+Enter</kbd>: open in DEVONthink
@@ -19,8 +20,14 @@ It doesn't yet implement the global variables available in the older one to excl
 - <kbd>DTWL</kbd> Load workspace,
 - <kbd>DTWS</kbd> Save workspace,
 - <kbd>DTTS</kbd>: Search with query in DT,
-- <kbd>DTT</kbd> Search for tags. This is a shortcut to <kbd>DTS</kbd> with a query like "tags: t1 tags: t2".
+- <kbd>DTT</kbd> Search for tags. This is a shortcut for <kbd>DTS</kbd> with a query like "tags: t1 tags: t2". Enter the tags separated by commas or semicolons.
 
+## Limit search to group
+
+To limit the search to a certain group, you must
+- select a database (<kbd>DTD</kbd>)
+- get its groups (<kbd>Ctrl-Enter</kbd>)
+- select one of the groups and open the search with <kbd>Cmd-Enter</kbd>
 ## Result order
 
 Results are returned in the following order
