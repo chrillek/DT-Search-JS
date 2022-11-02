@@ -84,7 +84,7 @@ function getIgnoredDBs() {
    excluding those in 'ignoredDbUuidList' */
 function getDB(all) {
   const DB = getEnv("selectedDbUUID");
-  console.log(`DB ${DB}`);
+  // console.log(`DB ${DB}`);
   if (all) {
     const ignoredDB = getIgnoredDBs();
     return (DB ? [app.getDatabaseWithUuid(DB)] : [...app.databases()]).filter(
@@ -189,7 +189,6 @@ function searchForAlfred(arg) {
   databases.forEach((db) => {
     // search in record corresponding to the database
     const resultList = app.search(query, { in: db.root() });
-    resultList.forEach(r => console.log(r.locationGroup.name()));
     resultList.filter(r => 
       searchGroup ? r.locationGroup.name() === searchGroup : true).forEach(r => {
       const uuid = r.uuid();
