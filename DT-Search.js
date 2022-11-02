@@ -6,6 +6,7 @@ ObjC.import("Foundation");
 
 const cmdMap = {
   list_databases: listDatabases /* DTD, select_DB */,
+  list_groups: listGroups /* new command */,
   list_smartgroups: listSmartgroups /* DTSG, list_all_smartgroups */,
   list_tags: listTags /* DTT, list_all_tags */,
   list_favorites: listFavorites /* DTF, list_favorites */,
@@ -18,11 +19,12 @@ const cmdMap = {
     searchInDT /* search_with_DT_URL, search_in_new_window. This runs the query in DT and populates the result window there  */,
   load_workspace: loadWorkspace /* load_workspace */,
   save_workspace: saveWorkspace /* save_workspace */,
-  list_searches:  listSearches /* list the last 10 searches (should the no. be configurable?) */,
+  list_searches:
+    listSearches /* list the last 10 searches (should the no. be configurable?) */,
 };
 
 const app = Application("DEVONthink 3");
-const searchFile = 'searches.json';
+const searchFile = "searches.json";
 const error = $();
 const savedSearches = loadSearches();
 
@@ -30,8 +32,18 @@ const savedSearches = loadSearches();
 const curApp = Application.currentApplication();
 curApp.includeStandardAdditions = true;
 
+function alfabetic_sort(a, b, field) {
+  const af = a[field]();
+  const bf = b[field]();
+  return af > bf ? 1 : af < bf ? -1 : 0;
+}
+
 function loadSearches() {
-  const string = $.NSString.stringWithContentsOfFileEncodingError($(searchFile),$.NSUTF8StringEncoding, error);
+  const string = $.NSString.stringWithContentsOfFileEncodingError(
+    $(searchFile),
+    $.NSUTF8StringEncoding,
+    error
+  );
   if (string && string.js) {
     return JSON.parse(string.js);
   } else {
@@ -40,9 +52,14 @@ function loadSearches() {
 }
 
 function saveSearches() {
- // console.log(`Saving ...${savedSearches}`);
+  // console.log(`Saving ...${savedSearches}`);
   const string = $(JSON.stringify(savedSearches));
-  string.writeToFileAtomicallyEncodingError($(searchFile), false, $.NSUTF8StringEncoding, error);
+  string.writeToFileAtomicallyEncodingError(
+    $(searchFile),
+    false,
+    $.NSUTF8StringEncoding,
+    error
+  );
 }
 
 /* Get an environment variable and return its value as JS string or undefined if it doesn't exist */
@@ -62,24 +79,38 @@ function getIgnoredDBs() {
     : [];
 }
 
-/* Return the DB defined in the preceding action. If 'all' is true, return an array containing all databases, 
+/* Return the DB defined in the preceding action. 
+   If 'all' is true, return an array containing all databases, 
    excluding those in 'ignoredDbUuidList' */
 function getDB(all) {
   const DB = getEnv("selectedDbUUID");
-  //  console.log(`DB ${DB}`);
+  console.log(`DB ${DB}`);
   if (all) {
     const ignoredDB = getIgnoredDBs();
     return (DB ? [app.getDatabaseWithUuid(DB)] : [...app.databases()]).filter(
       (uuid) => !ignoredDB.includes(uuid)
     );
   } else {
-    return app.getDatabaseWithUuid(DB);
+    return DB ? app.getDatabaseWithUuid(DB) : undefined;
   }
 }
 
 /* Build tag string for subtitles */
-function tagString(tags) {
+function formatTags(r) {
+  const tags = r.tags();
   return tags.length > 0 ? tags.join(", ") : "no tags";
+}
+
+/* Format the location for a record.
+  Returns 'database > group 1 > group 2 > ...
+*/
+function formatLocation(r) {
+  const location = r
+    .location()
+    .replaceAll(/^\/|\/$/g, "")
+    .replaceAll(/\//g, "#")
+    .replaceAll(/\/#/g, "/");
+  return [r.database.name(), ...location.split("#")].join(" > ");
 }
 
 /* check if the argument is an array with at least one empty element */
@@ -99,11 +130,12 @@ function checkArg(arg) {
 
 function run(arg) {
   const cmd = checkArg(arg);
+  //  console.log(`command ${cmd}`);
   /* Basic error checking */
   if (!cmd) return `{items: [Title: 'No command!']}`;
   const cmdHandler = cmdMap[cmd];
   if (!cmdHandler) return `{items: [Title: 'No cmdHandler for "${cmd}"!']}`;
-  /* Call the command handler with the remaining arguments */
+  /* Call the command handler with the remaining argument(s) */
   const result = cmdHandler(arg.slice(1));
   return result ? JSON.stringify({ items: result }) : undefined;
 }
@@ -138,49 +170,59 @@ function searchForAlfred(arg) {
       .filter((t) => !/^$/.test(t))
       .map((t) => `tags: ${t} `)
       .join("");
-    console.log(query);
+    //    console.log(query);
     //    curApp.displayAlert(`"${query}"`);
   }
-  const databases = getDB(true); /* Array with all databases to search */
+  const databases = getDB(true); /* Array with databases to search */
+  const searchGroup = getEnv("searchGroup");
   const resultArray = [{ query: query }];
-  savedSearches.push({q: query, db: (databases.length > 1 ? undefined : databases[0])});
+  savedSearches.push({
+    q: query,
+    db: databases.length > 1 ? undefined : databases[0],
+    group: searchGroup || undefined
+  });
   if (savedSearches.length > 10) {
     savedSearches.shift();
   }
   saveSearches();
 
-  databases.forEach(db => {
+  databases.forEach((db) => {
     // search in record corresponding to the database
     const resultList = app.search(query, { in: db.root() });
-
-    resultList.forEach(record => {
-      const uuid = record.uuid();
-      const location = (() => {
-        const loc = record.location();
-        if (loc.length > 1) {
-          return loc.slice(0, -1).replace(/\//g, " > ");
-        } else {
-          return "";
-        }
-      })();
-
-      const tagStr = tagString(record.tags());
-      const dtLink = `x-devonthink-item://${uuid}`;
-      const name = record.name();
-      const path = record.path();
+    resultList.forEach(r => console.log(r.locationGroup.name()));
+    resultList.filter(r => 
+      searchGroup ? r.locationGroup.name() === searchGroup : true).forEach(r => {
+      const uuid = r.uuid();
+      const location = formatLocation(r);
+      const tagStr = formatTags(r);
+      const dtLink = r.referenceURL();
+      const name = r.name();
+      const isGroup = r.type() === "group";
+      const path = isGroup
+        ? dtLink
+        : r.path(); /* set to path for normal records and to dtLink otherwise */
+      /* Use defaut DT's group icon for groups, thumbnail for normal records */
+      const icon = isGroup
+        ? { path: `./group.png` }
+        : { type: "fileicon", path: path };
       resultArray.push({
         type: "file:skipcheck",
         title: name,
-        score: record.score(),
+        score: r.score(),
         tags: tagStr,
         arg: path /* To open in default editor */,
-        subtitle: `📂 ${db.name()}: ${location}`,
-        icon: { type: "fileicon", path: path },
+        subtitle: `📂 ${location}`,
+        icon: icon,
         mods: {
-          cmd: { valid: true, arg: uuid, subtitle: `🏷 ${tagStr}` },
-          alt: { valid: true, arg: uuid, subtitle: "Reveal in DEVONthink" },
+          cmd: {
+            arg: uuid,
+            subtitle: `🏷 ${tagStr}`,
+          },
+          alt: {
+            arg: r.referenceURL(),
+            subtitle: "Reveal in DEVONthink",
+          },
           shift: {
-            valid: true,
             arg: `[${name}](${dtLink})`,
             subtitle: "Copy Markdown Link",
           },
@@ -199,9 +241,8 @@ function searchForAlfred(arg) {
 
 function listDatabases() {
   /* get an array of all databases sorted by name */
-  const DBs = app
-    .databases()
-    .sort((a, b) => (a.name() > b.name() ? 1 : a.name() < b.name() ? -1 : 0));
+  const DBs = app.databases().sort((a, b) => alfabetic_sort(a, b, "name"));
+
   const items = DBs.map((db) => {
     return {
       title: db.name(),
@@ -216,7 +257,10 @@ function listDatabases() {
 /* Open record in DT, using the UUID passed in arg[0] */
 function openRecord(arg) {
   const uuid = checkArg(arg);
-  app.openWindowFor({ record: app.getRecordWithUuid(uuid) });
+  app.openWindowFor({
+    record: app.getRecordWithUuid(uuid),
+    force: getEnv("alwaysOpenWindow"),
+  });
 }
 
 /* Find all records with the tag in env('selectedTag'). Uses searchForAlfred. */
@@ -240,7 +284,7 @@ function listSmartgroups() {
     smartGroupList.forEach((sg) => {
       items.push({
         title: sg.name(),
-        subtitle: `📂 ${db.name()} (${sg.children().length} elements)`,
+        subtitle: `📂 ${db.name()} (${sg.children().length} items)`,
         arg: sg.uuid(), // pass on smart groups UUID to next action, i.e. open in DT
       });
     });
@@ -252,14 +296,19 @@ function listSmartgroups() {
 function searchInDT(arg) {
   const query = checkArg(arg).replace(/(\p{sc=Han}+)/gu, " ~\1 ");
   if (arg.length === 1) {
+    /* there is an additional argument passed in - forward it to DT using its url scheme */
     curApp.doShellScript(
       `open 'x-devonthink://search?query=${encodeURIComponent(query)}'`
     );
   } else {
+    /* Only query passed in. Use DT's top window to run the search */
     app.activate();
     const r = app.inbox.root();
-    const tw = app.openWindowFor({ record: r }, { force: true });
-    tw.searchQuery = query;
+    const window = app.openWindowFor(
+      { record: r },
+      { force: getEnv("alwayOpenWindow") }
+    );
+    window.searchQuery = query;
   }
 }
 
@@ -275,19 +324,24 @@ function listFavorites() {
     const v = it.value();
     if ("UUID" in v) {
       /* Normal record */
-      return { title: `📁 v.Name`, arg: v.UUID};
+      const path = app.getRecordWithUuid(v.UUID).path();
+      const obj = { title: `${v.Name}`, arg: v.UUID };
+      if (path) {
+        obj.quicklookurl = `file://${path}`;
+      } else {
+        obj.icon = { path: "./group.png" };
+      }
+      return obj;
     } else if ("Path" in v) {
-      /* Database */
-        const uuid = (() => {
+      /* Database. Open it to get its UUID */
+      const uuid = (() => {
         const db = app.openDatabase(v.Path);
         return db.uuid();
       })();
-      return { title: v.Name, arg: uuid };
+      return { title: v.Name, arg: uuid, icon: { path: "./database.png" } };
     }
   });
-  return items.length
-    ? items
-    : [{ title: "No favorite items" }];
+  return items.length ? items : [{ title: "No favorite items" }];
 }
 
 function listWorkspaces() {
@@ -310,10 +364,53 @@ function saveWorkspace(argv) {
 
 function listSearches() {
   loadSearches();
-  const items = savedSearches.map(s => {
-    const dbString = s.db ||'All databases';
-    const scopeString = (s.db ? ` scope:${s.db}`: '');
-    return {title: `${s.q} (${dbString})`, arg: `${s.q}${scopeString}`};
-  })
+  const items = savedSearches.map((s) => {
+    const dbString = s.db || "All databases";
+    const scopeString = s.db ? ` scope:${s.db}` : "";
+    return { title: `${s.q} (${dbString})`, arg: `${s.q}${scopeString}` };
+  });
   return items.length ? items : [{ title: "No queries saved" }];
+}
+
+function listGroups() {
+  const db = getDB(false);
+  if (db) {
+    const tagGroups = db.tagGroups.uuid();
+    tagGroups.push(db.tagsGroup.uuid());
+    tagGroups.push(db.trashGroup.uuid());
+    const groups = db.parents
+      .whose({
+        _and: [
+          { _match: [ObjectSpecifier().type, "group"] },
+          { _not: [{ _match: [ObjectSpecifier().type, "tag"] }] },
+        ],
+      })()
+      .filter((g) => !tagGroups.includes(g.uuid()));
+    const items = groups
+      .sort((a, b) => alfabetic_sort(a, b, "location"))
+      .map((g) => {
+        return {
+          arg: g.referenceURL(),
+          title: `'${g.name()}' in ${formatLocation(g)}`,
+          subtitle: `Open in DT`,
+          type: "file:skipcheck",
+          mods: {
+            alt: {
+              arg: g.referenceURL(),
+              subtitle: "Reveal in DEVONthink",
+            } /* pass only the uuid here since the Alfred action builds the item link itself - USEFUL? */,
+            cmd: {
+              arg: "",
+              variables: {
+                searchGroup: g.name(), /* Name is needed for search scope later */
+                selectedDbUUID: db.uuid(),
+              },
+            },
+          },
+        };
+      });
+    return items.length ? items : [{ title: "No groups found" }];
+  } else {
+    return [{ title: "No database selected" }];
+  }
 }

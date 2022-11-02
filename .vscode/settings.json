@@ -7,5 +7,13 @@
     "markdown",
     "latex",
     "plaintext"
+  ],
+  "runOnSave.commands": [
+   {
+    "match": ".(js|png)$",
+    "command": "cp ${file} '/Users/ck/Library/Mobile Documents/com~apple~CloudDocs/Alfred/Alfred.alfredpreferences/workflows/user.workflow.F83FA9C7-6984-40E7-9397-43B755FC2BF7'",
+    "runIn": "terminal",
+    "finishStatusMesssage": "${file} copied to Alfred"
+   }
   ]
 }
