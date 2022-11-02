@@ -21,6 +21,39 @@
 				<false/>
 			</dict>
 		</array>
+		<key>221A9827-1ABB-4757-B9CE-CDF0C275CB4D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>92D0B4BA-A2F9-4D37-BFD0-C5090FB610EC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string>Open in new window in DT</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>45F9755A-A2CF-4A08-BD58-F164B38BEE00</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Search in selected group</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>0944EDAA-6AAB-4723-9064-E0D0D61B98FA</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Reveal in DT</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>3FB7D56C-1BB4-4D7A-9729-466CCEA1CDC1</key>
 		<array>
 			<dict>
@@ -130,6 +163,16 @@
 		</array>
 		<key>D73E8268-4276-4AAD-9CF3-91B29E6B79C9</key>
 		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>221A9827-1ABB-4757-B9CE-CDF0C275CB4D</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Show groups for database</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>45F9755A-A2CF-4A08-BD58-F164B38BEE00</string>
@@ -287,6 +330,53 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>osascript -l JavaScript DT-Search.js list_groups</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>{var:selectedDbName}</string>
+				<key>title</key>
+				<string>Show groups</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>221A9827-1ABB-4757-B9CE-CDF0C275CB4D</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -306,6 +396,38 @@
 			<string>0BAB7E3F-3E9B-450B-89AC-1A61A59CB08D</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>x-devonthink-item</string>
+						<key>outputlabel</key>
+						<string>Open Group</string>
+						<key>uid</key>
+						<string>63FEA545-EECD-4069-B7BB-506787D25991</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Open File</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>92D0B4BA-A2F9-4D37-BFD0-C5090FB610EC</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -341,7 +463,7 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>{var:selectedDbName}</string>
+				<string>{var:searchGroup} {var:selectedDbName}</string>
 				<key>title</key>
 				<string>Search in DEVONthink</string>
 				<key>type</key>
@@ -355,38 +477,6 @@
 			<string>45F9755A-A2CF-4A08-BD58-F164B38BEE00</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{query}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>4</integer>
-						<key>matchstring</key>
-						<string>x-devonthink-item</string>
-						<key>outputlabel</key>
-						<string>Open Group</string>
-						<key>uid</key>
-						<string>63FEA545-EECD-4069-B7BB-506787D25991</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>Open File</string>
-				<key>hideelse</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>92D0B4BA-A2F9-4D37-BFD0-C5090FB610EC</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -440,6 +530,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>osascript -l JavaScript DT-Search.js open_record "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -483,29 +596,6 @@
 			<string>F480BB2C-D5E5-4EDA-B3B4-69D176D25B8E</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>osascript -l JavaScript DT-Search.js open_record "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -558,21 +648,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>openwith</key>
-				<string></string>
-				<key>sourcefile</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>A7A99021-056A-4D32-BE8B-AC8E3069D486</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -616,6 +691,21 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>D883A945-0841-4E01-B919-C57B23109B59</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>A7A99021-056A-4D32-BE8B-AC8E3069D486</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -923,19 +1013,39 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>A re-make of "DEVONthink Search" without external dependencies on Python or Perl. All code is written in JavaScript. 
+	<string># Alfred Workflow for DEVONthink 3
 
-Not yet fully compatible with the original, since the global variables are missing and CJK support is minimal
+This workflow re-implements an older one also available on GitHub which depends on Python and other external tools. The new version only uses JavaScript, so that it doesn't depend on certain tools being installed.
 
-DTD - select database for subsequent commands
-DTS - search in all databases or only the one selected by DTD
-DTSG - show all smart groups or only for the DB selected by DTD
-DTF - list favorites – DOES NOT list databases, only groups and 
-      records
-DTWL - Load workspace
-DTWS - Save workspace
-DTT  - Search for tags
-DTTS - Search with query in DT</string>
+It doesn't yet implement the global variables available in the previous workflow to exclude a group or a list of databases. 
+
+## Keyboard shortcuts
+
+- &lt;kbd&gt;DTD&lt;/kbd&gt; select database for subsequent commands,
+  - &lt;kbd&gt;Enter&lt;/kbd&gt;: search in this database
+  - &lt;kbd&gt;Opt-Enter&lt;/kbd&gt;: show all smart groups for this database
+  - &lt;kbd&gt;Cmd-Enter&lt;/kbd&gt;: show all tags for this database
+  - &lt;kbd&gt;Ctrl-Enter&lt;/kbd&gt;: show all groups for this database (excluding Tags and Trash)
+- &lt;kbd&gt;DTS&lt;/kbd&gt;: search in all databases,
+  - &lt;kbd&gt;Enter&lt;/kbd&gt;: open in default program
+  - &lt;kbd&gt;Cmd+Enter&lt;/kbd&gt;: open in DEVONthink
+  - &lt;kbd&gt;Opt+Enter&lt;/kbd&gt;: reveal in DEVONthink
+- &lt;kbd&gt;DTSG&lt;/kbd&gt; show all smart groups,
+- &lt;kbd&gt;DTF&lt;/kbd&gt; list favorites. Databases in favorites currently not open will be opened by this command
+- &lt;kbd&gt;DTWL&lt;/kbd&gt; Load workspace,
+- &lt;kbd&gt;DTWS&lt;/kbd&gt; Save workspace,
+- &lt;kbd&gt;DTTS&lt;/kbd&gt;: Search with query in DT,
+- &lt;kbd&gt;DTT&lt;/kbd&gt; Search for tags. This is a shortcut to &lt;kbd&gt;DTS&lt;/kbd&gt; with a query like "tags: t1 tags: t2".
+
+## Result order
+
+Results are returned in the following order
+- Databases (&lt;kbd&gt;DTD&lt;/kbd&gt;) alphabetically by name,
+- Records (&lt;kbd&gt;DTS&lt;/kbd&gt;, &lt;kbd&gt;DTTS&lt;/kbd&gt;) first by database, than by ranking,
+- Tags (&lt;kbd&gt;DTT&lt;/kbd&gt;) alphabetically by name,
+- Workspaces (&lt;kbd&gt;DTWL&lt;/kbd&gt;) alphabetically by name,
+- Smart groups (&lt;kbd&gt;DTSG&lt;/kbd&gt;) first by database, than by name,
+- Favorites (&lt;kbd&gt;DTF&lt;/kbd&gt;) in the order shown in DEVONthink.</string>
 	<key>uidata</key>
 	<dict>
 		<key>05E7224D-461F-4FD6-BBCC-B927ADEF0E9D</key>
@@ -952,14 +1062,14 @@ DTTS - Search with query in DT</string>
 			<key>note</key>
 			<string>Reveal in DEVONthink</string>
 			<key>xpos</key>
-			<real>1270</real>
+			<real>1255</real>
 			<key>ypos</key>
-			<real>600</real>
+			<real>630</real>
 		</dict>
 		<key>0BAB7E3F-3E9B-450B-89AC-1A61A59CB08D</key>
 		<dict>
 			<key>note</key>
-			<string>Search with DT URL</string>
+			<string>Open with DT item link in DT</string>
 			<key>xpos</key>
 			<real>1265</real>
 			<key>ypos</key>
@@ -972,16 +1082,25 @@ DTTS - Search with query in DT</string>
 			<key>xpos</key>
 			<real>1265</real>
 			<key>ypos</key>
-			<real>275</real>
+			<real>300</real>
 		</dict>
 		<key>21BA232A-1DF1-4734-82D7-3D1E23865AC3</key>
 		<dict>
 			<key>note</key>
 			<string>Search in default engine</string>
 			<key>xpos</key>
-			<real>1275</real>
+			<real>1255</real>
 			<key>ypos</key>
-			<real>880</real>
+			<real>885</real>
+		</dict>
+		<key>221A9827-1ABB-4757-B9CE-CDF0C275CB4D</key>
+		<dict>
+			<key>note</key>
+			<string>Show all groups for selected database</string>
+			<key>xpos</key>
+			<real>140</real>
+			<key>ypos</key>
+			<real>15</real>
 		</dict>
 		<key>3FB7D56C-1BB4-4D7A-9729-466CCEA1CDC1</key>
 		<dict>
@@ -997,9 +1116,9 @@ DTTS - Search with query in DT</string>
 			<key>note</key>
 			<string>Search in selected database</string>
 			<key>xpos</key>
-			<real>300</real>
+			<real>290</real>
 			<key>ypos</key>
-			<real>25</real>
+			<real>165</real>
 		</dict>
 		<key>5D6F95FA-2F7D-4E1D-BB1D-3CED3E09CE84</key>
 		<dict>
@@ -1045,9 +1164,9 @@ DTTS - Search with query in DT</string>
 			<key>note</key>
 			<string>Open in Default Editor</string>
 			<key>xpos</key>
-			<real>1265</real>
+			<real>1260</real>
 			<key>ypos</key>
-			<real>430</real>
+			<real>470</real>
 		</dict>
 		<key>D73E8268-4276-4AAD-9CF3-91B29E6B79C9</key>
 		<dict>
@@ -1056,16 +1175,16 @@ DTTS - Search with query in DT</string>
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>275</real>
+			<real>225</real>
 		</dict>
 		<key>D883A945-0841-4E01-B919-C57B23109B59</key>
 		<dict>
 			<key>note</key>
 			<string>Show all smart groups</string>
 			<key>xpos</key>
-			<real>300</real>
+			<real>290</real>
 			<key>ypos</key>
-			<real>445</real>
+			<real>455</real>
 		</dict>
 		<key>DB152084-DE5D-4ED3-8F90-EF5B355D6CEA</key>
 		<dict>
@@ -1088,24 +1207,27 @@ DTTS - Search with query in DT</string>
 			<key>note</key>
 			<string>List all tags</string>
 			<key>xpos</key>
-			<real>295</real>
+			<real>290</real>
 			<key>ypos</key>
-			<real>275</real>
+			<real>310</real>
 		</dict>
 		<key>F480BB2C-D5E5-4EDA-B3B4-69D176D25B8E</key>
 		<dict>
 			<key>xpos</key>
 			<real>510</real>
 			<key>ypos</key>
-			<real>275</real>
+			<real>310</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
 	<array/>
-	<key>variablesdontexport</key>
-	<array/>
+	<key>variables</key>
+	<dict>
+		<key>alwaysOpenWindow</key>
+		<string>false</string>
+	</dict>
 	<key>version</key>
-	<string>1.4</string>
+	<string>1.6</string>
 	<key>webaddress</key>
 	<string>https://bru6.de/jxa</string>
 </dict>
