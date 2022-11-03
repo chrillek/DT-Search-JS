@@ -1,6 +1,9 @@
 /* One single source to handle all DEVONthink related stuff */
 "use strict;";
 ObjC.import("Foundation");
+ObjC.import("QuickLook");
+ObjC.import("CoreGraphics");
+ObjC.import("AppKit");
 
 /* Mapping from command names to functions in this file */
 
@@ -112,7 +115,28 @@ function formatLocation(r) {
     .replaceAll(/\/#/g, "/");
   return [r.database.name(), ...location.split("#")].join(" > ");
 }
+/* Ignore for now 
+function getQuicklookImage(r) {
+  const path = r.path();
+  const pathURL = $.NSURL.fileURLWithPath(path);
 
+  const cgimageRef = $.QLThumbnailImageCreate(
+    $.kCFAllocatorDefault,
+    pathURL,
+    $.CGSizeMake(100, 100),
+    {}
+  );
+  console.log(cgimageRef);
+  const nsimage = $.NSImage.alloc.initWithCGImageSize(cgimageRef, $.NSZeroSize);
+  const newRep = $.NSBitmapImageRep.alloc.initWithCGImage(cgimageRef);
+  newRep.setSize(nsimage.size);
+  const pngData = newRep.representationUsingTypeProperties($.NSPNGFileType, {});
+  const b64 =
+    "data:image/png;base64," +
+    ObjC.unwrap(pngData.base64EncodedStringWithOptions(0));
+  return b64;
+}
+*/
 /* check if the argument is an array with at least one empty element */
 function checkArg(arg) {
   const caller = arguments.callee.caller.name;
@@ -179,7 +203,7 @@ function searchForAlfred(arg) {
   savedSearches.push({
     q: query,
     db: databases.length > 1 ? undefined : databases[0],
-    group: searchGroup || undefined
+    group: searchGroup || undefined,
   });
   if (savedSearches.length > 10) {
     savedSearches.shift();
@@ -189,50 +213,53 @@ function searchForAlfred(arg) {
   databases.forEach((db) => {
     // search in record corresponding to the database
     const resultList = app.search(query, { in: db.root() });
-    resultList.filter(r => 
-      searchGroup ? r.locationGroup.name() === searchGroup : true).forEach(r => {
-      const uuid = r.uuid();
-      const location = formatLocation(r);
-      const tagStr = formatTags(r);
-      const dtLink = r.referenceURL();
-      const name = r.name();
-      const isGroup = r.type() === "group";
-      const path = isGroup
-        ? dtLink
-        : r.path(); /* set to path for normal records and to dtLink otherwise */
-      /* Use defaut DT's group icon for groups, thumbnail for normal records */
-      const icon = isGroup
-        ? { path: `./group.png` }
-        : { type: "fileicon", path: path };
-      resultArray.push({
-        type: "file:skipcheck",
-        title: name,
-        score: r.score(),
-        tags: tagStr,
-        arg: path /* To open in default editor */,
-        subtitle: `📂 ${location}`,
-        icon: icon,
-        mods: {
-          cmd: {
-            arg: uuid,
-            subtitle: `🏷 ${tagStr}`,
+    resultList
+      .filter((r) =>
+        searchGroup ? r.locationGroup.name() === searchGroup : true
+      )
+      .forEach((r) => {
+        const uuid = r.uuid();
+        const location = formatLocation(r);
+        const tagStr = formatTags(r);
+        const dtLink = r.referenceURL();
+        const name = r.name();
+        const isGroup = r.type() === "group";
+        const path = isGroup
+          ? dtLink
+          : r.path(); /* set to path for normal records and to dtLink otherwise */
+        /* Use defaut DT's group icon for groups, thumbnail for normal records */
+        const icon = isGroup
+          ? { path: `./group.png` }
+          : { type: "fileicon", path: path };
+        resultArray.push({
+          type: "file:skipcheck",
+          title: name,
+          score: r.score(),
+          tags: tagStr,
+          arg: path /* To open in default editor */,
+          subtitle: `📂 ${location}`,
+          icon: icon,
+          mods: {
+            cmd: {
+              arg: uuid,
+              subtitle: `🏷 ${tagStr}`,
+            },
+            alt: {
+              arg: r.referenceURL(),
+              subtitle: "Reveal in DEVONthink",
+            },
+            shift: {
+              arg: `[${name}](${dtLink})`,
+              subtitle: "Copy Markdown Link",
+            },
           },
-          alt: {
-            arg: r.referenceURL(),
-            subtitle: "Reveal in DEVONthink",
+          text: {
+            copy: `${dtLink}`,
+            largetype: `${dtLink}`,
           },
-          shift: {
-            arg: `[${name}](${dtLink})`,
-            subtitle: "Copy Markdown Link",
-          },
-        },
-        text: {
-          copy: `${dtLink}`,
-          largetype: `${dtLink}`,
-        },
-        quicklookurl: path,
-      });
-    }); /* forEach */
+  //        quicklookurl: r.path(),
+        });
+      }); /* forEach */
   }); /* databases.forEach */
   resultArray.sort((a, b) => b.score - a.score);
   return resultArray.length ? resultArray : [{ title: "No document..." }];
@@ -401,7 +428,8 @@ function listGroups() {
             cmd: {
               arg: "",
               variables: {
-                searchGroup: g.name(), /* Name is needed for search scope later */
+                searchGroup:
+                  g.name() /* Name is needed for search scope later */,
                 selectedDbUUID: db.uuid(),
               },
             },

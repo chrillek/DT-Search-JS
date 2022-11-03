@@ -25,7 +25,7 @@ With a database selected,
 
 <kbd>Cmd-Enter</kbd> on any record will open it in DEVONthink, possibly in a new window. 
 
-<kbd>Shift-Enter</kbd> on any record will save a Markdown link to it in the global clipboard. This link is of the form `[name](x-devonthink-item://...)`. 
+<kbd>Ctrl-Enter</kbd> on any record will save a Markdown link to it in the global clipboard. This link is of the form `[name](x-devonthink-item://...)`. 
 
 ## Searching in DEVONthink
 
