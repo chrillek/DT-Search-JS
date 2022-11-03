@@ -21,6 +21,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>18DF8BEC-7C05-4E5B-BB17-FFC9A31DC5CE</key>
+		<array/>
 		<key>221A9827-1ABB-4757-B9CE-CDF0C275CB4D</key>
 		<array>
 			<dict>
@@ -103,7 +105,20 @@
 				<key>destinationuid</key>
 				<string>21BA232A-1DF1-4734-82D7-3D1E23865AC3</string>
 				<key>modifiers</key>
-				<integer>131072</integer>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Copy Markdown link to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5BDC5FC2-F044-4922-820C-546505EAAB91</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>18DF8BEC-7C05-4E5B-BB17-FFC9A31DC5CE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -253,9 +268,9 @@
 				<key>destinationuid</key>
 				<string>21BA232A-1DF1-4734-82D7-3D1E23865AC3</string>
 				<key>modifiers</key>
-				<integer>131072</integer>
+				<integer>262144</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Copy Markdown link to clipboard</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -309,9 +324,9 @@
 				<key>destinationuid</key>
 				<string>21BA232A-1DF1-4734-82D7-3D1E23865AC3</string>
 				<key>modifiers</key>
-				<integer>131072</integer>
+				<integer>262144</integer>
 				<key>modifiersubtext</key>
-				<string>Open in default program</string>
+				<string>Copy Markdown link to clipboard</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -530,29 +545,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>osascript -l JavaScript DT-Search.js open_record "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -644,6 +636,29 @@
 			<string>E7C45E80-CB9C-4915-ABA9-0C220A5E1773</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>osascript -l JavaScript DT-Search.js open_record "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1011,41 +1026,149 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>osascript -l JavaScript DT-Search.js search_for_alfred "url:$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>18DF8BEC-7C05-4E5B-BB17-FFC9A31DC5CE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsfiles</key>
+				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>acceptstext</key>
+				<false/>
+				<key>acceptsurls</key>
+				<true/>
+				<key>name</key>
+				<string>Find URL in DEVONthink</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.universalaction</string>
+			<key>uid</key>
+			<string>5BDC5FC2-F044-4922-820C-546505EAAB91</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string></string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>16FA594C-25A2-4303-9F96-CF3C57E3EBC0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
-	<string># Alfred Workflow for DEVONthink 3
+	<string>&gt; Alfred Workflow for DEVONthink 3
 
 This workflow re-implements an older one also available on GitHub which depends on Python and other external tools. The new version only uses JavaScript, so that it doesn't depend on certain tools being installed.
 
-It doesn't yet implement the global variables available in the previous workflow to exclude a group or a list of databases. 
+It does not yet offer the global variables available in the previous workflow to exclude a group or a list of databases from searches. 
 
-## Keyboard shortcuts
+&gt; Show all databases
 
-- &lt;kbd&gt;DTD&lt;/kbd&gt; select database for subsequent commands,
-  - &lt;kbd&gt;Enter&lt;/kbd&gt;: search in this database
-  - &lt;kbd&gt;Opt-Enter&lt;/kbd&gt;: show all smart groups for this database
-  - &lt;kbd&gt;Cmd-Enter&lt;/kbd&gt;: show all tags for this database
-  - &lt;kbd&gt;Ctrl-Enter&lt;/kbd&gt;: show all groups for this database (excluding Tags and Trash)
-- &lt;kbd&gt;DTS&lt;/kbd&gt;: search in all databases,
-  - &lt;kbd&gt;Enter&lt;/kbd&gt;: open in default program
-  - &lt;kbd&gt;Cmd+Enter&lt;/kbd&gt;: open in DEVONthink
-  - &lt;kbd&gt;Opt+Enter&lt;/kbd&gt;: reveal in DEVONthink
-- &lt;kbd&gt;DTSG&lt;/kbd&gt; show all smart groups,
-- &lt;kbd&gt;DTF&lt;/kbd&gt; list favorites. Databases in favorites currently not open will be opened by this command
-- &lt;kbd&gt;DTWL&lt;/kbd&gt; Load workspace,
-- &lt;kbd&gt;DTWS&lt;/kbd&gt; Save workspace,
-- &lt;kbd&gt;DTTS&lt;/kbd&gt;: Search with query in DT,
-- &lt;kbd&gt;DTT&lt;/kbd&gt; Search for tags. This is a shortcut to &lt;kbd&gt;DTS&lt;/kbd&gt; with a query like "tags: t1 tags: t2".
+Keyboard shortcut is DTD. It will populate Alfred's window with the databases currently open (!) in DT. That's different from the result of "show favorites".
 
-## Result order
+With a database selected, 
+- Enter searches in it
+- Opt-Enter shows all its smart groups 
+- Cmd-Enter shows all its tags
+- Ctrl-Enter shows all its groups, excluding Tags and Trash
+  - Cmd-Enter searches in this group
+
+&gt; Opening records
+
+Enter on any record will open it. If it's a group, it will be opened in DEVONthink, otherwise the standard program will be used. 
+
+Opt-Enter on any record will reveal it in DEVONthink, i.e. the DEVONthink window will show it highlighted.
+
+Cmd-Enter on any record will open it in DEVONthink, possibly in a new window. 
+
+Ctrl-Enter on any record will save a Markdown link to it in the global clipboard. This link is of the form `[name](x-devonthink-item://...)`. 
+
+&gt; Searching in DEVONthink
+
+You can search for tags with DTT. Separate tags with commas or semicolons. 
+
+You can also use DEVONthink's search syntax. However, the `scope` parameter will not take any effect here. Alternatively, you can search in DEVONthink with DTS. Again, you can use any valid search string like `kind:group name:receipts`. 
+
+
+
+When using DTS, all databases will be searched. To limit the search to a single database, use DTD, select the database and start your search with Enter.
+
+&gt; List Favorites
+
+DTF lists all favorites. Note that databases can be in the favorites list although they are not currently open. Therefore, this command will implicitly open all databases in the list of favorites. 
+
+&gt; Limit search to group
+
+To limit the search to a certain group, you must
+- select a database with DTD
+- get its groups with Ctrl-Enter)
+- select one of the groups and open the search with Cmd-Enter
+
+&gt; Result order
 
 Results are returned in the following order
-- Databases (&lt;kbd&gt;DTD&lt;/kbd&gt;) alphabetically by name,
-- Records (&lt;kbd&gt;DTS&lt;/kbd&gt;, &lt;kbd&gt;DTTS&lt;/kbd&gt;) first by database, than by ranking,
-- Tags (&lt;kbd&gt;DTT&lt;/kbd&gt;) alphabetically by name,
-- Workspaces (&lt;kbd&gt;DTWL&lt;/kbd&gt;) alphabetically by name,
-- Smart groups (&lt;kbd&gt;DTSG&lt;/kbd&gt;) first by database, than by name,
-- Favorites (&lt;kbd&gt;DTF&lt;/kbd&gt;) in the order shown in DEVONthink.</string>
+- Databases (DTD) alphabetically by name,
+- Groups by location, i.e. first by database, then by name.
+- Records (DTS, DTTS) first by database, than by ranking,
+- Tags (DTT) alphabetically by name,
+- Workspaces (DTWL) alphabetically by name,
+- Smart groups (DTSG) first by database, than by name,
+- Favorites (DTF) in the order shown in DEVONthink.
+
+&gt; Keyboard shortcuts
+
+All shortcuts can of course be modified.
+
+- DTD select database for subsequent commands,
+  - Enter: search in this database
+  - Opt-Enter: show all smart groups for this database
+  - Cmd-Enter: show all tags for this database
+  - Ctrl-Enter: show all groups for this database (excluding Tags and Trash)
+- DTS: search in all databases,
+  - Enter: open in default program
+  - Cmd+Enter: open in DEVONthink
+  - Opt+Enter: reveal in DEVONthink
+- DTSG show all smart groups,
+- DTF list favorites. Databases in favorites currently not open will be opened by this command
+- DTWL Load workspace,
+- DTWS Save workspace,
+- DTTS: Search with query in DT,
+- DTT Search for tags. This is a shortcut for DTS with a query like "tags: t1 tags: t2". Enter the tags separated by commas or semicolons.</string>
 	<key>uidata</key>
 	<dict>
 		<key>05E7224D-461F-4FD6-BBCC-B927ADEF0E9D</key>
@@ -1075,14 +1198,30 @@ Results are returned in the following order
 			<key>ypos</key>
 			<real>15</real>
 		</dict>
+		<key>16FA594C-25A2-4303-9F96-CF3C57E3EBC0</key>
+		<dict>
+			<key>xpos</key>
+			<real>1330</real>
+			<key>ypos</key>
+			<real>1650</real>
+		</dict>
+		<key>18DF8BEC-7C05-4E5B-BB17-FFC9A31DC5CE</key>
+		<dict>
+			<key>note</key>
+			<string>search_for_alfred with URL</string>
+			<key>xpos</key>
+			<real>685</real>
+			<key>ypos</key>
+			<real>1635</real>
+		</dict>
 		<key>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</key>
 		<dict>
 			<key>note</key>
 			<string>Open with DEVONthink</string>
 			<key>xpos</key>
-			<real>1265</real>
+			<real>1260</real>
 			<key>ypos</key>
-			<real>300</real>
+			<real>320</real>
 		</dict>
 		<key>21BA232A-1DF1-4734-82D7-3D1E23865AC3</key>
 		<dict>
@@ -1119,6 +1258,15 @@ Results are returned in the following order
 			<real>380</real>
 			<key>ypos</key>
 			<real>160</real>
+		</dict>
+		<key>5BDC5FC2-F044-4922-820C-546505EAAB91</key>
+		<dict>
+			<key>note</key>
+			<string>Pass URL to DT, search in record's url</string>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>1635</real>
 		</dict>
 		<key>5D6F95FA-2F7D-4E1D-BB1D-3CED3E09CE84</key>
 		<dict>
