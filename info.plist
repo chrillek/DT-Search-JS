@@ -21,8 +21,19 @@
 				<false/>
 			</dict>
 		</array>
-		<key>18DF8BEC-7C05-4E5B-BB17-FFC9A31DC5CE</key>
-		<array/>
+		<key>087A97F1-6ED8-46C3-8FA5-86AB6745BA82</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5D7F1D42-1BE6-475D-B8AF-D348B5612EA6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>221A9827-1ABB-4757-B9CE-CDF0C275CB4D</key>
 		<array>
 			<dict>
@@ -37,7 +48,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>45F9755A-A2CF-4A08-BD58-F164B38BEE00</string>
+				<string>F6B29D9A-56AA-40B4-9028-BD225759A861</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
@@ -47,11 +58,11 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>0944EDAA-6AAB-4723-9064-E0D0D61B98FA</string>
+				<string>E5BFBA62-4067-41B2-99A1-5109FC6D3D1A</string>
 				<key>modifiers</key>
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
-				<string>Reveal in DT</string>
+				<string>Reveal in DEVONthink</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -83,44 +94,31 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string>Open record in DEVONthink</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>0944EDAA-6AAB-4723-9064-E0D0D61B98FA</string>
+				<string>E5BFBA62-4067-41B2-99A1-5109FC6D3D1A</string>
 				<key>modifiers</key>
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Reveal in DEVONthink</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>21BA232A-1DF1-4734-82D7-3D1E23865AC3</string>
+				<string>BDB865DA-97D2-46D4-BF27-F488C23F349B</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open in DEVONthink</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>934AC9FF-7C71-45C7-926D-9634512A7077</string>
 				<key>modifiers</key>
 				<integer>262144</integer>
 				<key>modifiersubtext</key>
-				<string>Copy Markdown link to clipboard</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>5BDC5FC2-F044-4922-820C-546505EAAB91</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>18DF8BEC-7C05-4E5B-BB17-FFC9A31DC5CE</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
+				<string>Copy markdown link to clipboard</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -142,11 +140,11 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
+				<string>BDB865DA-97D2-46D4-BF27-F488C23F349B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Open in DEVONthink</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -167,7 +165,33 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>A7A99021-056A-4D32-BE8B-AC8E3069D486</string>
+				<string>ECCC37CB-BAEF-4F36-9844-9CC44064EA38</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>934AC9FF-7C71-45C7-926D-9634512A7077</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>21BA232A-1DF1-4734-82D7-3D1E23865AC3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BDB865DA-97D2-46D4-BF27-F488C23F349B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -180,21 +204,21 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>221A9827-1ABB-4757-B9CE-CDF0C275CB4D</string>
+				<string>F6B29D9A-56AA-40B4-9028-BD225759A861</string>
 				<key>modifiers</key>
-				<integer>262144</integer>
+				<integer>0</integer>
 				<key>modifiersubtext</key>
-				<string>Show groups for database</string>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>45F9755A-A2CF-4A08-BD58-F164B38BEE00</string>
+				<string>221A9827-1ABB-4757-B9CE-CDF0C275CB4D</string>
 				<key>modifiers</key>
-				<integer>0</integer>
+				<integer>262144</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Show groups for database</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -223,54 +247,67 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
+				<string>BDB865DA-97D2-46D4-BF27-F488C23F349B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
-				<string>Open in DT</string>
+				<string>Open in DEVONthink</string>
 				<key>vitoclose</key>
-				<false/>
+				<true/>
 			</dict>
 		</array>
 		<key>DB152084-DE5D-4ED3-8F90-EF5B355D6CEA</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
+				<string>ECCC37CB-BAEF-4F36-9844-9CC44064EA38</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>0</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Open in default app</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>A7A99021-056A-4D32-BE8B-AC8E3069D486</string>
+				<string>E5BFBA62-4067-41B2-99A1-5109FC6D3D1A</string>
 				<key>modifiers</key>
-				<integer>0</integer>
+				<integer>524288</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Reveal in DEVONthink</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>BDB865DA-97D2-46D4-BF27-F488C23F349B</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open in DEVONthink</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>934AC9FF-7C71-45C7-926D-9634512A7077</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Copy markdown link to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E5BFBA62-4067-41B2-99A1-5109FC6D3D1A</key>
+		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>0944EDAA-6AAB-4723-9064-E0D0D61B98FA</string>
 				<key>modifiers</key>
-				<integer>524288</integer>
+				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>21BA232A-1DF1-4734-82D7-3D1E23865AC3</string>
-				<key>modifiers</key>
-				<integer>262144</integer>
-				<key>modifiersubtext</key>
-				<string>Copy Markdown link to clipboard</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -288,18 +325,8 @@
 				<false/>
 			</dict>
 		</array>
-		<key>F480BB2C-D5E5-4EDA-B3B4-69D176D25B8E</key>
+		<key>ECCC37CB-BAEF-4F36-9844-9CC44064EA38</key>
 		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>A7A99021-056A-4D32-BE8B-AC8E3069D486</string>
@@ -310,23 +337,59 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+		</array>
+		<key>F480BB2C-D5E5-4EDA-B3B4-69D176D25B8E</key>
+		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>0944EDAA-6AAB-4723-9064-E0D0D61B98FA</string>
+				<string>ECCC37CB-BAEF-4F36-9844-9CC44064EA38</string>
 				<key>modifiers</key>
-				<integer>524288</integer>
+				<integer>0</integer>
 				<key>modifiersubtext</key>
-				<string>Open in DT</string>
+				<string>Open in default app</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>21BA232A-1DF1-4734-82D7-3D1E23865AC3</string>
+				<string>E5BFBA62-4067-41B2-99A1-5109FC6D3D1A</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Reveal in DEVONthink</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>BDB865DA-97D2-46D4-BF27-F488C23F349B</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open in DEVONthink</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>934AC9FF-7C71-45C7-926D-9634512A7077</string>
 				<key>modifiers</key>
 				<integer>262144</integer>
 				<key>modifiersubtext</key>
-				<string>Copy Markdown link to clipboard</string>
+				<string>Copy markdown link to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F6B29D9A-56AA-40B4-9028-BD225759A861</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>45F9755A-A2CF-4A08-BD58-F164B38BEE00</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -364,6 +427,118 @@
 			<string>0BAB7E3F-3E9B-450B-89AC-1A61A59CB08D</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>dts</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Please wait ...</string>
+				<key>script</key>
+				<string>osascript -l JavaScript DT-Search.js search_for_alfred "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>{var:searchGroup} {var:selectedDbName}</string>
+				<key>title</key>
+				<string>Search in DEVONthink</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>45F9755A-A2CF-4A08-BD58-F164B38BEE00</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>x-devonthink-item</string>
+						<key>outputlabel</key>
+						<string>Open Group</string>
+						<key>uid</key>
+						<string>63FEA545-EECD-4069-B7BB-506787D25991</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Open File</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>92D0B4BA-A2F9-4D37-BFD0-C5090FB610EC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>F6B29D9A-56AA-40B4-9028-BD225759A861</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>A7A99021-056A-4D32-BE8B-AC8E3069D486</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>ECCC37CB-BAEF-4F36-9844-9CC44064EA38</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -415,87 +590,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{query}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>4</integer>
-						<key>matchstring</key>
-						<string>x-devonthink-item</string>
-						<key>outputlabel</key>
-						<string>Open Group</string>
-						<key>uid</key>
-						<string>63FEA545-EECD-4069-B7BB-506787D25991</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>Open File</string>
-				<key>hideelse</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>92D0B4BA-A2F9-4D37-BFD0-C5090FB610EC</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<false/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>keyword</key>
-				<string>dts</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>1</integer>
-				<key>queuemode</key>
-				<integer>2</integer>
-				<key>runningsubtext</key>
-				<string>Please wait ...</string>
-				<key>script</key>
-				<string>osascript -l JavaScript DT-Search.js search_for_alfred "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>{var:searchGroup} {var:selectedDbName}</string>
-				<key>title</key>
-				<string>Search in DEVONthink</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>45F9755A-A2CF-4A08-BD58-F164B38BEE00</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -526,6 +620,8 @@
 				<integer>0</integer>
 				<key>scriptfile</key>
 				<string></string>
+				<key>skipuniversalaction</key>
+				<true/>
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
@@ -643,6 +739,38 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string># $1: uuid
+open "x-devonthink-item://${1}?reveal=1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0944EDAA-6AAB-4723-9064-E0D0D61B98FA</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>E5BFBA62-4067-41B2-99A1-5109FC6D3D1A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
 				<string>osascript -l JavaScript DT-Search.js open_record "$1"</string>
@@ -659,21 +787,6 @@
 			<string>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>openwith</key>
-				<string></string>
-				<key>sourcefile</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>A7A99021-056A-4D32-BE8B-AC8E3069D486</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -725,28 +838,12 @@
 			<integer>3</integer>
 		</dict>
 		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string># $1: uuid
-open "x-devonthink-item://${1}?reveal=1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.junction</string>
 			<key>uid</key>
-			<string>0944EDAA-6AAB-4723-9064-E0D0D61B98FA</string>
+			<string>BDB865DA-97D2-46D4-BF27-F488C23F349B</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -867,6 +964,14 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 			<integer>3</integer>
 		</dict>
 		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>934AC9FF-7C71-45C7-926D-9634512A7077</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
 			<key>config</key>
 			<dict>
 				<key>concurrently</key>
@@ -899,7 +1004,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
-				<string>Search with query in DT</string>
+				<string>Search in DT window</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -1029,25 +1134,49 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
 				<key>escaping</key>
 				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
 				<key>script</key>
-				<string>osascript -l JavaScript DT-Search.js search_for_alfred "url:$1"</string>
+				<string>osascript -l JavaScript DT_Search.js search_back_urls "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Search links to URL passed as parameter</string>
 				<key>type</key>
 				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>18DF8BEC-7C05-4E5B-BB17-FFC9A31DC5CE</string>
+			<string>5D7F1D42-1BE6-475D-B8AF-D348B5612EA6</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1061,31 +1190,12 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>acceptsurls</key>
 				<true/>
 				<key>name</key>
-				<string>Find URL in DEVONthink</string>
+				<string>Search backlinks in DT</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
-			<string>5BDC5FC2-F044-4922-820C-546505EAAB91</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string></string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>16FA594C-25A2-4303-9F96-CF3C57E3EBC0</string>
+			<string>087A97F1-6ED8-46C3-8FA5-86AB6745BA82</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1178,68 +1288,59 @@ All shortcuts can of course be modified.
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>1270</real>
+			<real>1725</real>
+		</dict>
+		<key>087A97F1-6ED8-46C3-8FA5-86AB6745BA82</key>
+		<dict>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>2060</real>
 		</dict>
 		<key>0944EDAA-6AAB-4723-9064-E0D0D61B98FA</key>
 		<dict>
 			<key>note</key>
 			<string>Reveal in DEVONthink</string>
 			<key>xpos</key>
-			<real>1255</real>
+			<real>1705</real>
 			<key>ypos</key>
-			<real>630</real>
+			<real>620</real>
 		</dict>
 		<key>0BAB7E3F-3E9B-450B-89AC-1A61A59CB08D</key>
 		<dict>
 			<key>note</key>
 			<string>Open with DT item link in DT</string>
 			<key>xpos</key>
-			<real>1265</real>
+			<real>1710</real>
 			<key>ypos</key>
-			<real>15</real>
-		</dict>
-		<key>16FA594C-25A2-4303-9F96-CF3C57E3EBC0</key>
-		<dict>
-			<key>xpos</key>
-			<real>1330</real>
-			<key>ypos</key>
-			<real>1650</real>
-		</dict>
-		<key>18DF8BEC-7C05-4E5B-BB17-FFC9A31DC5CE</key>
-		<dict>
-			<key>note</key>
-			<string>search_for_alfred with URL</string>
-			<key>xpos</key>
-			<real>685</real>
-			<key>ypos</key>
-			<real>1635</real>
+			<real>60</real>
 		</dict>
 		<key>1D403C36-5A6B-4D7B-AEF2-4F253885DF64</key>
 		<dict>
 			<key>note</key>
 			<string>Open with DEVONthink</string>
 			<key>xpos</key>
-			<real>1260</real>
+			<real>1700</real>
 			<key>ypos</key>
-			<real>320</real>
+			<real>820</real>
 		</dict>
 		<key>21BA232A-1DF1-4734-82D7-3D1E23865AC3</key>
 		<dict>
 			<key>note</key>
 			<string>Save Markdown link [name](x-devonthink-item...)</string>
 			<key>xpos</key>
-			<real>1255</real>
+			<real>1690</real>
 			<key>ypos</key>
-			<real>885</real>
+			<real>1220</real>
 		</dict>
 		<key>221A9827-1ABB-4757-B9CE-CDF0C275CB4D</key>
 		<dict>
 			<key>note</key>
 			<string>Show all groups for selected database</string>
 			<key>xpos</key>
-			<real>205</real>
+			<real>475</real>
 			<key>ypos</key>
-			<real>20</real>
+			<real>385</real>
 		</dict>
 		<key>3FB7D56C-1BB4-4D7A-9729-466CCEA1CDC1</key>
 		<dict>
@@ -1248,32 +1349,30 @@ All shortcuts can of course be modified.
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>1430</real>
+			<real>1885</real>
 		</dict>
 		<key>45F9755A-A2CF-4A08-BD58-F164B38BEE00</key>
 		<dict>
 			<key>note</key>
 			<string>Search in selected database</string>
 			<key>xpos</key>
-			<real>380</real>
+			<real>750</real>
 			<key>ypos</key>
-			<real>160</real>
-		</dict>
-		<key>5BDC5FC2-F044-4922-820C-546505EAAB91</key>
-		<dict>
-			<key>note</key>
-			<string>Pass URL to DT, search in record's url</string>
-			<key>xpos</key>
-			<real>30</real>
-			<key>ypos</key>
-			<real>1635</real>
+			<real>65</real>
 		</dict>
 		<key>5D6F95FA-2F7D-4E1D-BB1D-3CED3E09CE84</key>
 		<dict>
 			<key>xpos</key>
 			<real>1270</real>
 			<key>ypos</key>
-			<real>1125</real>
+			<real>1580</real>
+		</dict>
+		<key>5D7F1D42-1BE6-475D-B8AF-D348B5612EA6</key>
+		<dict>
+			<key>xpos</key>
+			<real>1265</real>
+			<key>ypos</key>
+			<real>2060</real>
 		</dict>
 		<key>704EC450-15D2-4744-8622-B248FCA997DE</key>
 		<dict>
@@ -1282,39 +1381,53 @@ All shortcuts can of course be modified.
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>1130</real>
+			<real>1585</real>
 		</dict>
 		<key>7061F819-A8CD-48F5-8F37-D2246D4D7C34</key>
 		<dict>
 			<key>xpos</key>
 			<real>1270</real>
 			<key>ypos</key>
-			<real>1425</real>
+			<real>1880</real>
 		</dict>
 		<key>70C53587-0B6B-4A52-9A1A-F6BBEAF3DD18</key>
 		<dict>
 			<key>note</key>
 			<string>List favorites</string>
 			<key>xpos</key>
-			<real>40</real>
+			<real>1210</real>
 			<key>ypos</key>
-			<real>665</real>
+			<real>1055</real>
 		</dict>
 		<key>92D0B4BA-A2F9-4D37-BFD0-C5090FB610EC</key>
 		<dict>
 			<key>xpos</key>
-			<real>660</real>
+			<real>1195</real>
 			<key>ypos</key>
-			<real>40</real>
+			<real>85</real>
+		</dict>
+		<key>934AC9FF-7C71-45C7-926D-9634512A7077</key>
+		<dict>
+			<key>xpos</key>
+			<real>1255</real>
+			<key>ypos</key>
+			<real>1255</real>
 		</dict>
 		<key>A7A99021-056A-4D32-BE8B-AC8E3069D486</key>
 		<dict>
 			<key>note</key>
 			<string>Open in Default Editor</string>
 			<key>xpos</key>
-			<real>1260</real>
+			<real>1700</real>
 			<key>ypos</key>
-			<real>470</real>
+			<real>285</real>
+		</dict>
+		<key>BDB865DA-97D2-46D4-BF27-F488C23F349B</key>
+		<dict>
+			<key>xpos</key>
+			<real>1450</real>
+			<key>ypos</key>
+			<real>850</real>
 		</dict>
 		<key>D73E8268-4276-4AAD-9CF3-91B29E6B79C9</key>
 		<dict>
@@ -1323,48 +1436,69 @@ All shortcuts can of course be modified.
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>275</real>
+			<real>605</real>
 		</dict>
 		<key>D883A945-0841-4E01-B919-C57B23109B59</key>
 		<dict>
 			<key>note</key>
 			<string>Show all smart groups</string>
 			<key>xpos</key>
-			<real>375</real>
+			<real>475</real>
 			<key>ypos</key>
-			<real>480</real>
+			<real>830</real>
 		</dict>
 		<key>DB152084-DE5D-4ED3-8F90-EF5B355D6CEA</key>
 		<dict>
 			<key>note</key>
 			<string>Search by tags</string>
 			<key>xpos</key>
-			<real>35</real>
+			<real>390</real>
 			<key>ypos</key>
-			<real>890</real>
+			<real>1225</real>
+		</dict>
+		<key>E5BFBA62-4067-41B2-99A1-5109FC6D3D1A</key>
+		<dict>
+			<key>xpos</key>
+			<real>1445</real>
+			<key>ypos</key>
+			<real>650</real>
 		</dict>
 		<key>E670F8C6-38F9-463A-8053-55D4C6634FCD</key>
 		<dict>
 			<key>xpos</key>
 			<real>1270</real>
 			<key>ypos</key>
-			<real>1265</real>
+			<real>1720</real>
 		</dict>
 		<key>E7C45E80-CB9C-4915-ABA9-0C220A5E1773</key>
 		<dict>
 			<key>note</key>
 			<string>List all tags</string>
 			<key>xpos</key>
-			<real>380</real>
+			<real>465</real>
+			<key>ypos</key>
+			<real>605</real>
+		</dict>
+		<key>ECCC37CB-BAEF-4F36-9844-9CC44064EA38</key>
+		<dict>
+			<key>xpos</key>
+			<real>1440</real>
 			<key>ypos</key>
 			<real>315</real>
 		</dict>
 		<key>F480BB2C-D5E5-4EDA-B3B4-69D176D25B8E</key>
 		<dict>
 			<key>xpos</key>
-			<real>555</real>
+			<real>700</real>
 			<key>ypos</key>
-			<real>315</real>
+			<real>605</real>
+		</dict>
+		<key>F6B29D9A-56AA-40B4-9028-BD225759A861</key>
+		<dict>
+			<key>xpos</key>
+			<real>640</real>
+			<key>ypos</key>
+			<real>100</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>

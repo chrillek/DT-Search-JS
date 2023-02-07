@@ -4,6 +4,8 @@ This workflow re-implements an older one also available on GitHub which depends 
 
 It does not yet offer the global variables available in the previous workflow to exclude a group or a list of databases from searches. 
 
+**Note** You must allow Alfred to automate DEVONthink in System Settings/Privacy/Automation. 
+
 ## Show all databases
 
 Keyboard shortcut is <kbd>DTD</kbd>. It will populate Alfred's window with the databases currently open (!) in DT. That's different from the result of "show favorites".
